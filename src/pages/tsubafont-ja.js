@@ -8,25 +8,6 @@ export default function TsubafontJa() {
       backgroundColor: '#ffffff',
       color: '#000000'
     }}>
-      <img 
-        src="/images/tsubafont-header.png" 
-        alt="Tsubasasans" 
-        style={{ 
-          width: '100%', 
-          maxWidth: '600px',
-          height: 'auto', 
-          display: 'block',
-          margin: '30px auto 20px auto'
-        }}
-      />
-
-      <h1 style={{ 
-        fontSize: '24px',
-        borderBottom: '2px solid #000000',
-        paddingBottom: '10px'
-      }}>
-        Tsubasasans
-      </h1>
       <h1 style={{ 
         fontSize: '24px',
         borderBottom: '2px solid #000000',
@@ -37,6 +18,18 @@ export default function TsubafontJa() {
       <p style={{ fontSize: '16px', fontStyle: 'italic', marginTop: '10px' }}>
         現代のデジタルアプリケーション向けに設計された、モダンで縦長の日本語書体
       </p>
+
+      <img 
+        src="/images/tsubafont-header.png" 
+        alt="Tsubasasans" 
+        style={{ 
+          width: '100%', 
+          maxWidth: '600px',
+          height: 'auto', 
+          display: 'block',
+          margin: '30px auto'
+        }}
+      />
 
       <nav style={{ marginTop: '20px', marginBottom: '30px' }}>
         <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>

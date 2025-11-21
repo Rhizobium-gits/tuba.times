@@ -8,6 +8,17 @@ export default function Tsubafont() {
       backgroundColor: '#ffffff',
       color: '#000000'
     }}>
+      <h1 style={{ 
+        fontSize: '24px',
+        borderBottom: '2px solid #000000',
+        paddingBottom: '10px'
+      }}>
+        Tsubasasans
+      </h1>
+      <p style={{ fontSize: '16px', fontStyle: 'italic', marginTop: '10px' }}>
+        A modern, tall Japanese typeface designed for contemporary digital applications.
+      </p>
+
       <img 
         src="/images/tsubafont-header.png" 
         alt="Tsubasasans" 
@@ -16,26 +27,15 @@ export default function Tsubafont() {
           maxWidth: '600px',
           height: 'auto', 
           display: 'block',
-          margin: '30px auto 20px auto'
+          margin: '30px auto'
         }}
       />
 
-      <h1 style={{ 
-        fontSize: '24px',
-        borderBottom: '2px solid #000000',
-        paddingBottom: '10px'
-      }}>
-        Tsubasasans
-      </h1>
-<p style={{ fontSize: '16px', fontStyle: 'italic', marginTop: '10px' }}>
-        A modern, tall Japanese typeface designed for contemporary digital applications.
-      </p>
-
       <nav style={{ marginTop: '20px', marginBottom: '30px' }}>
-  <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>
-  <span style={{ marginRight: '10px' }}>|</span>
-  <a href="/tsubafont-ja" style={{ color: '#0000EE' }}>日本語</a>
-</nav>
+        <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>
+        <span style={{ marginRight: '10px' }}>|</span>
+        <a href="/tsubafont-ja" style={{ color: '#0000EE' }}>日本語</a>
+      </nav>
       
       <section style={{ marginTop: '30px', lineHeight: '1.8' }}>
         <h2 style={{ fontSize: '20px', marginTop: '30px', marginBottom: '15px' }}>Overview</h2>
