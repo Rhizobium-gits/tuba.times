@@ -20,12 +20,27 @@ export default function Home() {
         ようこそ，佐藤 翼のサイトへ
       </h1>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>所属</h2>
-      <p style={{ lineHeight: '1.8' }}>
-        慶應義塾大学 環境情報学部 1年<br />
-        慶應義塾大学 先端生命科学研究所 腸内細菌グループ (PI: 福田真嗣)<br />
-        東京科学大学（旧東京医科歯科大学) 難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)
-      </p>
+      <div style={{ textAlign: 'center', margin: '30px 0' }}>
+        <img 
+          src="/images/profile.jpg" 
+          alt="佐藤 翼" 
+          style={{ 
+            width: '250px', 
+            height: '250px',
+            objectFit: 'cover',
+            borderRadius: '50%',
+            border: '3px solid #000000'
+          }}
+        />
+      </div>
+
+      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <p style={{ lineHeight: '1.8' }}>
+          慶應義塾大学 環境情報学部 1年<br />
+          慶應義塾大学 先端生命科学研究所 腸内細菌グループ (PI: 福田真嗣)<br />
+          東京科学大学（旧東京医科歯科大学) 難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)
+        </p>
+      </div>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>研究</h2>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
@@ -65,30 +80,11 @@ export default function Home() {
         </li>
       </ol>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>
-      <ul style={{ lineHeight: '1.8' }}>
-        <li>慶應義塾大学 先端生命科学研究所 腸内細菌叢グループ (PI: 福田真嗣)</li>
-        <li>東京科学大学（旧東京医科歯科大学）難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)</li>
-        <li>ADvance Lab 副所長インターン</li>
-        <li>ADvance Lab 宇宙部門リーダー</li>
-        <li>北京聚力維度科技有限公司 インターン（中国・北京）</li>
-        <li>名古屋大学大学院医学系研究科 システム生物学研究室 派遣勤務 (PI: 島村徹平)</li>
-      </ul>
-      
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>受賞歴</h2>
-      <ul style={{ lineHeight: '1.8' }}>
-        <li>
-          <a href="https://www.nature.com/collections/ghbjijhbci" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">TOP100 DOWNLOADED ARTICLES 2024 (Scientific Reports・Nature Portfolio)</a>
-        </li>
-        <li>日本植物生理学会(JSPP) 奨励賞 (第64回年会 高校生発表の部)</li>
-        <li>京都大学宇宙ユニットシンポジウム(第16回) 優秀賞 (京都大学宇宙ユニット)</li>        
-        <li>銀賞 日本生化学 (JBS）（第95回大会、高校生発表部門）</li>
-      </ul>
-      
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Tsubatimes</h2>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
       <ul style={{ listStyleType: 'disc' }}>
-        <li> <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
-<img 
+        <li><a href="/profile" style={{ color: '#0000EE' }}>略歴（研究・経歴・受賞歴）</a></li>
+        <li>
+          <img 
             src="/images/tsubafont-icon.png" 
             alt="Tsubafont" 
             style={{ 
@@ -98,6 +94,7 @@ export default function Home() {
               marginBottom: '8px'
             }}
           />
+          <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
         <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
