@@ -122,4 +122,3 @@ I actively pursue interdisciplinary approaches spanning microbiology, systems bi
       </p>
     </div>
   );
-}
