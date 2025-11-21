@@ -8,6 +8,18 @@ export default function Tsubafont() {
       backgroundColor: '#ffffff',
       color: '#000000'
     }}>
+      <img 
+        src="/images/tsubafont-header.png" 
+        alt="Tsubasasans" 
+        style={{ 
+          width: '100%', 
+          maxWidth: '600px',
+          height: 'auto', 
+          display: 'block',
+          margin: '30px auto 20px auto'
+        }}
+      />
+
       <h1 style={{ 
         fontSize: '24px',
         borderBottom: '2px solid #000000',
@@ -15,7 +27,7 @@ export default function Tsubafont() {
       }}>
         Tsubasasans
       </h1>
-      <p style={{ fontSize: '16px', fontStyle: 'italic', marginTop: '10px' }}>
+<p style={{ fontSize: '16px', fontStyle: 'italic', marginTop: '10px' }}>
         A modern, tall Japanese typeface designed for contemporary digital applications.
       </p>
 

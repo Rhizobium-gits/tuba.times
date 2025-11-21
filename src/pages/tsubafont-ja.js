@@ -8,6 +8,25 @@ export default function TsubafontJa() {
       backgroundColor: '#ffffff',
       color: '#000000'
     }}>
+      <img 
+        src="/images/tsubafont-header.png" 
+        alt="Tsubasasans" 
+        style={{ 
+          width: '100%', 
+          maxWidth: '600px',
+          height: 'auto', 
+          display: 'block',
+          margin: '30px auto 20px auto'
+        }}
+      />
+
+      <h1 style={{ 
+        fontSize: '24px',
+        borderBottom: '2px solid #000000',
+        paddingBottom: '10px'
+      }}>
+        Tsubasasans
+      </h1>
       <h1 style={{ 
         fontSize: '24px',
         borderBottom: '2px solid #000000',
