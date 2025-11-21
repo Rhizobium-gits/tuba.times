@@ -17,7 +17,7 @@ export default function Home() {
         borderBottom: '2px solid #000000',
         paddingBottom: '10px'
       }}>
-        佐藤 翼
+        ようこそ，佐藤 翼のサイトへ
       </h1>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>所属</h2>

@@ -17,7 +17,7 @@ export default function Home() {
         borderBottom: '2px solid #000000',
         paddingBottom: '10px'
       }}>
-        Tsubasa SATO
+        Welcome to Tsubasa SATO's Site
       </h1>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Affiliation</h2>
