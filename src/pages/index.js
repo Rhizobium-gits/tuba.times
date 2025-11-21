@@ -50,22 +50,20 @@ export default function Home() {
         <li>Technetope (2025)</li>
       </ul>
 
-<h2 style={{ fontSize: '20px', marginTop: '30px' }}>査読付き論文/国際学会採択</h2>
-<ol style={{ lineHeight: '1.8' }}>
-  <li>
-    <strong>Sato, T.</strong>,Abe, K., Koseki, J., et al. (2024) 
-    "Survivability and life support in sealed mini-ecosystems with simulated planetary soils" 
-    <i>Scientific Reports</i>, 14, 23670.{' '}
-    <a href="https://www.nature.com/articles/s41598-024-75328-x" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">
-      https://doi.org/10.1038/s41598-024-75328-x
-    </a>
-  </li>
-<li>
-  <strong>Tsubasa SATO</strong> (2023). 
-  "Survivability and life support in sealed mini-ecosystems with simulated planetary soils" 
-  <i>7th MVA Global Workshop & Symposium (MVA2023)</i>
-</li>
-</ol>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>査読付き論文/国際学会採択</h2>
+      <ol style={{ lineHeight: '1.8' }}>
+        <li>
+          <strong>Sato, T.</strong>, Abe, K., Koseki, J., et al. (2024). 
+          "Survivability and life support in sealed mini-ecosystems with simulated planetary soils." 
+          <i>Scientific Reports</i>, 14, 23670.{' '}
+          <a href="https://www.nature.com/articles/s41598-024-75328-x" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41598-024-75328-x</a>
+        </li>
+        <li>
+          <strong>Tsubasa SATO</strong> (2023). 
+          "Survivability and life support in sealed mini-ecosystems with simulated planetary soils." 
+          <i>7th MVA Global Workshop & Symposium (MVA2023)</i>
+        </li>
+      </ol>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>
       <ul style={{ lineHeight: '1.8' }}>
@@ -79,69 +77,69 @@ export default function Home() {
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>受賞歴</h2>
       <ul style={{ lineHeight: '1.8' }}>
-        <li><a href="https://www.nature.com/collections/ghbjijhbci" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">
-    TOP100 DOWNLOADED ARTICLES 2024 (Scientific Reports・Nature Portfolio)
-  </a></li>
+        <li>
+          <a href="https://www.nature.com/collections/ghbjijhbci" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">TOP100 DOWNLOADED ARTICLES 2024 (Scientific Reports・Nature Portfolio)</a>
+        </li>
         <li>日本植物生理学会(JSPP) 奨励賞 (第64回年会 高校生発表の部)</li>
         <li>京都大学宇宙ユニットシンポジウム(第16回) 優秀賞 (京都大学宇宙ユニット)</li>        
         <li>銀賞 日本生化学 (JBS）（第95回大会、高校生発表部門）</li>
       </ul>
       
-<h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
-<ul style={{ listStyleType: 'disc' }}>
-  <li>
-<img 
-      src="/images/tsubafont-icon.png" 
-      alt="Tsubafont" 
-      style={{ 
-        width: '300px', 
-        height: 'auto', 
-        display: 'block',
-        marginBottom: '8px'
-      }}
-    />
-    <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
-  </li>
-<li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
-  <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
-</ul>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
+      <ul style={{ listStyleType: 'disc' }}>
+        <li>
+          <img 
+            src="/images/tsubafont-icon.png" 
+            alt="Tsubafont" 
+            style={{ 
+              width: '300px', 
+              height: 'auto', 
+              display: 'block',
+              marginBottom: '8px'
+            }}
+          />
+          <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
+        </li>
+        <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
+        <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
+      </ul>
       
-<hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
+      <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
 
-<div style={{ 
-  display: 'flex', 
-  justifyContent: 'center', 
-  gap: '20px', 
-  marginTop: '20px',
-  marginBottom: '20px'
-}}>
-  <a href="https://x.com/rhizobium_st" target="_blank" rel="noopener noreferrer">
-    <img 
-      src="/images/x-icon.png" 
-      alt="X" 
-      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
-    />
-  </a>
-  <a href="https://note.com/283note_/portal" target="_blank" rel="noopener noreferrer">
-    <img 
-      src="/images/note-icon.png" 
-      alt="note" 
-      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
-    />
-  </a>
-  <a href="https://github.com/Rhizobium-gits" target="_blank" rel="noopener noreferrer">
-    <img 
-      src="/images/github-icon.png" 
-      alt="GitHub" 
-      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
-    />
-  </a>
-</div>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '20px', 
+        marginTop: '20px',
+        marginBottom: '20px'
+      }}>
+        <a href="https://x.com/rhizobium_st" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/images/x-icon.png" 
+            alt="X" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+        </a>
+        <a href="https://note.com/283note_/portal" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/images/note-icon.png" 
+            alt="note" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+        </a>
+        <a href="https://github.com/Rhizobium-gits" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/images/github-icon.png" 
+            alt="GitHub" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+        </a>
+      </div>
 
-<p style={{ fontSize: '12px', textAlign: 'right' }}>
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
-　　　　Last updated: {new Date().toLocaleDateString('ja-JP')}<br />
-        E-mail: sato.mb@keio.jp(Keio University) / t-sato.csb@tmd.ac.jp(Institute of Science Tokyo)
+        Last updated: {new Date().toLocaleDateString('ja-JP')}<br />
+        E-mail: sato.mb@keio.jp (Keio University) / t-sato.csb@tmd.ac.jp (Institute of Science Tokyo)
       </p>
     </div>
   );
+}
