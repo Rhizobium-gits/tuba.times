@@ -69,13 +69,12 @@ export default function Home() {
 <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
 <ul style={{ listStyleType: 'disc' }}>
   <li>
-    <img 
+<img 
       src="/images/tsubafont-icon.png" 
       alt="Tsubafont" 
       style={{ 
-        width: '80px', 
-        height: '80px', 
-        objectFit: 'contain',
+        width: '300px', 
+        height: 'auto', 
         display: 'block',
         marginBottom: '8px'
       }}
