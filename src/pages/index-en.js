@@ -29,20 +29,19 @@ export default function Home() {
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Research</h2>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        Since 2019, I have been conducting experiments on constructing maintenance systems for Sealed mini-ecosystem in the context of space colonization, as well as experiments on survival feasibility using simulated extraterrestrial soil. I continue to work on experiments related to mimicking Earth's biomes.
+Since 2019, I have been conducting experiments on constructing maintenance systems for Sealed mini-ecosystem in the context of space colonization, as well as experiments on survival feasibility using simulated extraterrestrial soil. I continue to work on experiments related to mimicking Earth's biomes. 
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        Since 2025, I have been a member of the Intestinal Microbiota Group at the Institute for Advanced Biosciences, Keio University, researching the dynamic mechanisms of human gut microbiota under low-gravity and hypergravity environments.
+Since 2025, I have been a member of the Intestinal Microbiota Group at the Institute for Advanced Biosciences, Keio University, researching the dynamic mechanisms of human gut microbiota under low-gravity and hypergravity environments. 
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        Additionally, I work as a technical support staff at the Medical Research Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University), where I am involved in time-series dynamic analysis of bacterial flora, application of deep learning models, and development of bacterial culture devices.
+Additionally, I work as a technical support staff at the Medical Resarch Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University), where I am involved in time-series dynamic analysis of bacterial flora, application of deep learning models, and development of bacterial culture devices. 
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        Outside of academic activities, as the Space Division Leader at ADvance Lab (Leave a Nest Co., Ltd.), I am working on developing water-soluble lunar concrete for future lunar infrastructure.
+Outside of academic activities, as the Space Division Leader at ADvance Lab (Leave a Nest Co., Ltd.), I am working on developing water-soluble lunar concrete for future lunar infrastructure. 
       </p>
       <p style={{ lineHeight: '1.8' }}>
-        I actively pursue interdisciplinary approaches spanning microbiology, systems biology, and human spaceflight studies.
-      </p>
+I actively pursue interdisciplinary approaches spanning microbiology, systems biology, and human spaceflight studies．      </p>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Works</h2>
       <ul style={{ lineHeight: '1.8' }}>
@@ -86,7 +85,39 @@ export default function Home() {
         <li><a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a></li>
       </ul>
       
-      <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
+<hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
+
+<div style={{ 
+  display: 'flex', 
+  justifyContent: 'center', 
+  gap: '20px', 
+  marginTop: '20px',
+  marginBottom: '20px'
+}}>
+  <a href="https://x.com/rhizobium_st" target="_blank" rel="noopener noreferrer">
+    <img 
+      src="/images/x-icon.png" 
+      alt="X" 
+      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+    />
+  </a>
+  <a href="https://note.com/283note_/portal" target="_blank" rel="noopener noreferrer">
+    <img 
+      src="/images/note-icon.png" 
+      alt="note" 
+      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+    />
+  </a>
+  <a href="https://github.com/Rhizobium-gits" target="_blank" rel="noopener noreferrer">
+    <img 
+      src="/images/github-icon.png" 
+      alt="GitHub" 
+      style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+    />
+  </a>
+</div>
+
+<p style={{ fontSize: '12px', textAlign: 'right' }}>
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
         Last updated: {new Date().toLocaleDateString()}<br />
         Contact: sato.mb@keio.jp(Keio University) / t-sato.csb@tmd.ac.jp(Institute of Science Tokyo)
