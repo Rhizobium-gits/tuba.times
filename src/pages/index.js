@@ -87,8 +87,8 @@ export default function Home() {
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
       <ul style={{ listStyleType: 'disc' }}>
-        <li>
-          <img 
+        <li> <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
+<img 
             src="/images/tsubafont-icon.png" 
             alt="Tsubafont" 
             style={{ 
@@ -98,7 +98,6 @@ export default function Home() {
               marginBottom: '8px'
             }}
           />
-          <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
         <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
