@@ -67,16 +67,25 @@ export default function Home() {
       </ul>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
-      <ul style={{ listStyleType: 'disc' }}>
-        <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
-        <li><a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a></li>
-        <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
-      </ul>
+<ul style={{ listStyleType: 'disc' }}>
+  <li>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+      <img 
+        src="/images/tsubafont-icon.png" 
+        alt="Tsubafont" 
+        style={{ width: '30px', height: '30px', objectFit: 'contain' }}
+      />
+      <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
+    </div>
+  </li>
+  <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
+  <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
+</ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
         最終更新: {new Date().toLocaleDateString('ja-JP')}<br />
-        連絡先: sato.mb@keio.jp / satou.t.ac@m.titech.ac.jp
+        連絡先: sato.mb@keio.jp(慶應義塾大学) / t-sato.csb@tmd.ac.jp(東京科学大学)
       </p>
     </div>
   );
