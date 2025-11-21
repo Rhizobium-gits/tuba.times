@@ -66,19 +66,23 @@ export default function Home() {
         <li>銀賞、日本生化学会（JBS）（第95回大会、高校生発表部門）</li>
       </ul>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
+<h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
 <ul style={{ listStyleType: 'disc' }}>
   <li>
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-      <img 
-        src="/images/tsubafont-icon.png" 
-        alt="Tsubafont" 
-        style={{ width: '30px', height: '30px', objectFit: 'contain' }}
-      />
-      <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
-    </div>
+    <img 
+      src="/images/tsubafont-icon.png" 
+      alt="Tsubafont" 
+      style={{ 
+        width: '80px', 
+        height: '80px', 
+        objectFit: 'contain',
+        display: 'block',
+        marginBottom: '8px'
+      }}
+    />
+    <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
   </li>
-  <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
+<li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
   <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
 </ul>
       
