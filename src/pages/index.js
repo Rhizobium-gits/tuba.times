@@ -134,6 +134,13 @@ export default function Home() {
             style={{ width: '32px', height: '32px', objectFit: 'contain' }}
           />
         </a>
+        <a href="https://scholar.google.com/citations?user=13x6x4sAAAAJ&hl=ja&authuser=2" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="/images/scholar-icon.png" 
+            alt="Google Scholar" 
+            style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+          />
+        </a>
       </div>
 
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
