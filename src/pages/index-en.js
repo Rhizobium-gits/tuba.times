@@ -17,15 +17,29 @@ export default function Home() {
         borderBottom: '2px solid #000000',
         paddingBottom: '10px'
       }}>
-        Welcome to Tsubasa SATO's Site
+        Tsubasa SATO
       </h1>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Affiliation</h2>
-      <p style={{ lineHeight: '1.8' }}>
-        1st Year Student, Faculty of Environment and Information Studies, Keio University<br />
-        Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji Fukuda)<br />
-        Laboratory of Computational Systems Biology, Medical Research Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University) (PI: Teppei Shimamura)
-      </p>
+<div style={{ textAlign: 'center', margin: '30px 0' }}>
+        <img 
+          src="/images/profile.jpg" 
+          alt="佐藤 翼" 
+          style={{ 
+            width: '100%',
+            maxWidth: '400px',
+            height: 'auto',
+            border: '2px solid #000000'
+          }}
+        />
+      </div>
+
+      <div style={{ textAlign: 'center', marginBottom: '30px' }}>
+        <p style={{ lineHeight: '1.8' }}>
+          1st Year Student, Faculty of Environment and Information Studies, Keio University<br />
+          Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji Fukuda)<br />
+          Laboratory of Computational Systems Biology, Medical Research Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University) (PI: Teppei Shimamura)
+        </p>
+      </div>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Research</h2>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
@@ -65,28 +79,9 @@ export default function Home() {
         </li>
       </ol>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Career</h2>
-      <ul style={{ lineHeight: '1.8' }}>
-        <li>Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji FUKUDA)</li>
-        <li>Laboratory of Computational Systems Biology, Medical Research Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University) (PI: Teppei SHIMAMURA)</li>
-        <li>Deputy Director Intern, ADvance Lab</li>
-        <li>Space Division Leader, ADvance Lab</li>
-        <li>Intern, 北京聚力维度科技有限公司 (Beijing, China)</li>
-        <li>Dispatch Work, Laboratory of Systems Biology, Graduate School of Medicine, Nagoya University (PI: Teppei SHIMAMURA)</li>
-      </ul>
-      
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Awards</h2>
-      <ul style={{ lineHeight: '1.8' }}>
-        <li>
-          <a href="https://www.nature.com/collections/ghbjijhbci" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">TOP100 DOWNLOADED ARTICLES 2024 (Scientific Reports・Nature Portfolio)</a>
-        </li>
-        <li>Encouragement Award, Japanese Society of Plant Physiologists (JSPP) (64th Annual Meeting, High School Presentation Section)</li>
-        <li>Excellence Award, 16th Kyoto University Space Unit Symposium (Kyoto University Space Unit)</li>
-        <li>Silver Award, Japanese Biochemical Society (JBS) (95th Annual Meeting, High School Presentation Section)</li>
-      </ul>
-      
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Links</h2>
       <ul style={{ listStyleType: 'disc' }}>
+        <li><a href="/profile-en" style={{ color: '#0000EE' }}>Biography (Research, Career, Awards)</a></li>
         <li>
           <img 
             src="/images/tsubafont-icon.png" 
@@ -144,7 +139,7 @@ export default function Home() {
       </div>
 
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
-        Last updated: {new Date().toLocaleDateString('ja-JP')}<br />
+        Last updated: {new Date().toLocaleDateString()}<br />
         E-mail: sato.mb@keio.jp (Keio University) / t-sato.csb@tmd.ac.jp (Institute of Science Tokyo)
       </p>
     </div>

@@ -20,16 +20,15 @@ export default function Home() {
         ようこそ，佐藤 翼のサイトへ
       </h1>
       
-      <div style={{ textAlign: 'center', margin: '30px 0' }}>
+<div style={{ textAlign: 'center', margin: '30px 0' }}>
         <img 
           src="/images/profile.jpg" 
           alt="佐藤 翼" 
           style={{ 
-            width: '250px', 
-            height: '250px',
-            objectFit: 'cover',
-            borderRadius: '50%',
-            border: '3px solid #000000'
+            width: '100%',
+            maxWidth: '400px',
+            height: 'auto',
+            border: '2px solid #000000'
           }}
         />
       </div>
