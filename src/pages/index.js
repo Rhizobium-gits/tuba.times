@@ -23,25 +23,25 @@ export default function Home() {
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>所属</h2>
       <p style={{ lineHeight: '1.8' }}>
         慶應義塾大学 環境情報学部 1年<br />
-        慶應義塾大学 先端生命科学研究所 腸内環境デザイン研究グループ (PI: 福田真嗣)<br />
-        東京科学大学（旧東京医科歯科大学）医学研究所 計算システム生物学研究室 (PI: 島村徹平)
+        慶應義塾大学 先端生命科学研究所 腸内細菌グループ (PI: 福田真嗣)<br />
+        東京科学大学（旧東京医科歯科大学) 難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)
       </p>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>研究</h2>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        2019年より、宇宙植民地化を背景とした閉鎖型ミニ生態系の維持システム構築実験や、模擬地球外土壌を用いた生存可能性実験を実施してきました。地球の生物群系を模倣する実験を継続しています。
+        2019年より，宇宙移住を背景とした縮小型閉鎖生態系維持システムの構築や，模擬地球外土壌を用いた生存可能性実験を行った．地球のバイオームを再現する実験を引き続き行っている．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        2025年より、慶應義塾大学先端生命科学研究所の腸内環境デザイン研究グループに所属し、低重力および過重力環境下におけるヒト腸内マイクロバイオータの動的メカニズムを研究しています。
+        2025年より，慶應義塾大学 先端生命科学研究所 腸内細菌グループに所属し、低重力および過重力環境下におけるヒト腸内細菌叢の時間列動態解析を行っています．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        また、東京科学大学（旧東京医科歯科大学）医学研究所の技術支援スタッフとして、細菌叢の時系列動的解析、深層学習モデルの応用、細菌培養装置の開発に携わっています。
+        また，東京科学大学（旧東京医科歯科大学）難治疾患研究所の技術支援員として，細菌叢の時系列動的解析，深層学習モデルの応用，細菌培養装置の開発に携わっています．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        学術活動以外では、ADvance Lab（株式会社リバネス）のスペース部門リーダーとして、将来の月面インフラのための水溶性月面コンクリートの開発に取り組んでいます。
+        学術活動以外では，ADvance Lab（株式会社リバネス）の宇宙部門リーダーとして，将来の月面インフラのための水溶性月面コンクリートの開発に取り組んでいます．
       </p>
       <p style={{ lineHeight: '1.8' }}>
-        微生物学、システム生物学、有人宇宙飛行研究にまたがる学際的アプローチを積極的に追求しています。
+        微生物学，システム生物学，有人宇宙学にまたがる学際的アプローチを積極的に推進しています．
       </p>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>作品</h2>
@@ -49,21 +49,35 @@ export default function Home() {
         <li>Nature to Tech, Tech to Nature. (2024)</li>
         <li>Technetope (2025)</li>
       </ul>
+
+<h2 style={{ fontSize: '20px', marginTop: '30px' }}>査読付き論文/国際学会採択</h2>
+<ol style={{ lineHeight: '1.8' }}>
+  <li>
+    <strong>Sato, T.</strong>, Enami, Y., Ito, H., Oba, K., & Takakuwa, K. (2024). 
+    "Survivability and life support in sealed mini-ecosystems with simulated planetary soils" 
+    <i>Scientific Reports</i>, 14, 23670.{' '}
+    <a href="https://www.nature.com/articles/s41598-024-75328-x" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">
+      https://doi.org/10.1038/s41598-024-75328-x
+    </a>
+  </li>
+</ol>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>
       <ul style={{ lineHeight: '1.8' }}>
-        <li>慶應義塾大学 先端生命科学研究所 腸内環境デザイン研究グループ (PI: 福田真嗣)</li>
-        <li>東京科学大学（旧東京医科歯科大学）医学研究所 計算システム生物学研究室 (PI: 島村徹平)</li>
+        <li>慶應義塾大学 先端生命科学研究所 腸内細菌叢グループ (PI: 福田真嗣)</li>
+        <li>東京科学大学（旧東京医科歯科大学）難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)</li>
         <li>ADvance Lab 副所長インターン</li>
-        <li>ADvance Lab スペース部門リーダー</li>
+        <li>ADvance Lab 宇宙部門リーダー</li>
         <li>北京聚力維度科技有限公司 インターン（中国・北京）</li>
         <li>名古屋大学大学院医学系研究科 システム生物学研究室 派遣勤務 (PI: 島村徹平)</li>
       </ul>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>受賞歴</h2>
       <ul style={{ lineHeight: '1.8' }}>
-        <li>優秀賞、第16回京都大学宇宙ユニットシンポジウム（京都大学宇宙ユニット）</li>
-        <li>銀賞、日本生化学会（JBS）（第95回大会、高校生発表部門）</li>
+        <li>TOP100 DOWNLOADED ARTICLES 2024 (Scientific Reports・Nature Portfolio)</li>
+        <li>日本植物生理学会(JSPP) 奨励賞 (第64回年会 高校生発表の部)</li>
+        <li>京都大学宇宙ユニットシンポジウム(第16回) 優秀賞 (京都大学宇宙ユニット)</li>        
+        <li>銀賞 日本生化学 (JBS）（第95回大会、高校生発表部門）</li>
       </ul>
       
 <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
