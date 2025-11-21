@@ -49,6 +49,19 @@ export default function Home() {
         <li>Nature to Tech, Tech to Nature. (2024)</li>
         <li>Technetope (2025)</li>
       </ul>
+
+<li>
+    <strong>Sato, T.</strong>, Enami, Y., Ito, H., Oba, K., & Takakuwa, K. (202$
+    "Survivability and life support in sealed mini-ecosystems with simulated pl$    <i>Scientific Reports</i>, 14, 23670.{' '}
+    <a href="https://www.nature.com/articles/s41598-024-75328-x" style={{ color$
+      https://doi.org/10.1038/s41598-024-75328-x
+    </a>
+  </li>
+<li>
+  <strong>Tsubasa SATO</strong> (2023).
+  "Survivability and life support in sealed mini-ecosystems with simulated plan$
+  <i>7th MVA Global Workshop & Symposium (MVA2023)</i>
+</li> 
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Career</h2>
       <ul style={{ lineHeight: '1.8' }}>
@@ -76,7 +89,7 @@ export default function Home() {
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
         Last updated: {new Date().toLocaleDateString()}<br />
-        Contact: sato.mb@keio.jp / satou.t.ac@m.titech.ac.jp
+        Contact: sato.mb@keio.jp(Keio University) / t-sato.csb@tmd.ac.jp(Institute of Science Tokyo)
       </p>
     </div>
   );

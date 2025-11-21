@@ -60,6 +60,11 @@ export default function Home() {
       https://doi.org/10.1038/s41598-024-75328-x
     </a>
   </li>
+<li>
+  <strong>Tsubasa SATO</strong> (2023). 
+  "Survivability and life support in sealed mini-ecosystems with simulated planetary soils" 
+  <i>7th MVA Global Workshop & Symposium (MVA2023)</i>
+</li>
 </ol>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>
