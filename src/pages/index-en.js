@@ -53,7 +53,6 @@ I actively pursue interdisciplinary approaches spanning microbiology, systems bi
     <strong>Sato, T.</strong>, Enami, Y., Ito, H., Oba, K., & Takakuwa, K. (202$
     "Survivability and life support in sealed mini-ecosystems with simulated pl$    <i>Scientific Reports</i>, 14, 23670.{' '}
 <a href="https://www.nature.com/articles/s41598-024-75328-x" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41598-024-75328-x</a>
-    </a>
   </li>
 <li>
   <strong>Tsubasa SATO</strong> (2023).

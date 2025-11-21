@@ -140,8 +140,8 @@ export default function Home() {
 
 <p style={{ fontSize: '12px', textAlign: 'right' }}>
       <p style={{ fontSize: '12px', textAlign: 'right' }}>
-Last updated: {new Date().toLocaleDateString('ja-JP')}<br />
-        連絡先: sato.mb@keio.jp / satou.t.ac@m.titech.ac.jp
+　　　　Last updated: {new Date().toLocaleDateString('ja-JP')}<br />
+        E-mail: sato.mb@keio.jp(Keio University) / t-sato.csb@tmd.ac.jp(Institute of Science Tokyo)
       </p>
     </div>
   );
