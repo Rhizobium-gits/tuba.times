@@ -85,7 +85,7 @@ export default function Home() {
         <li>銀賞 日本生化学 (JBS）（第95回大会、高校生発表部門）</li>
       </ul>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Tsubatimes</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li> <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
 <img 

@@ -20,7 +20,7 @@ export default function TsubafontJa() {
       </p>
 
       <img 
-        src="/images/tsubafont-header.png" 
+        src="/images/tsubafont-icon.png" 
         alt="Tsubasasans" 
         style={{ 
           width: '100%', 

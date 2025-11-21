@@ -19,8 +19,8 @@ export default function Tsubafont() {
         A modern, tall Japanese typeface designed for contemporary digital applications.
       </p>
 
-      <img 
-        src="/images/tsubafont-header.png" 
+<img 
+        src="/images/tsubafont-icon.png" 
         alt="Tsubasasans" 
         style={{ 
           width: '100%', 
