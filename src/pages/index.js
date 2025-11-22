@@ -95,6 +95,7 @@ export default function Home() {
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
         <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
+　　　　<li><a href="/music" style={{ color: '#0000EE' }}>音楽</a></li>
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
