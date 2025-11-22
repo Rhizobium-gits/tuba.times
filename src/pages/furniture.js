@@ -72,7 +72,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              Happy Hacking Keyboard | Professional US配列 - 墨
+              HHKB | Professional US配列 - 墨
             </p>
           </div>
           <div style={{ flex: 1 }}>
@@ -105,7 +105,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪
+              HHKB | Professional Type-S JIS配列 - 雪
             </p>
           </div>
           <div style={{ flex: 1 }}>
