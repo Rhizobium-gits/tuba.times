@@ -28,7 +28,6 @@ export default function Home() {
             width: '100%',
             maxWidth: '400px',
             height: 'auto',
-            border: '2px solid #000000'
           }}
         />
       </div>
@@ -60,8 +59,8 @@ export default function Home() {
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>作品</h2>
       <ul style={{ lineHeight: '1.8' }}>
-        <li>Nature to Tech, Tech to Nature. (2024)</li>
         <li>Technetope (2025)</li>
+        <li>Nature to Tech, Tech to Nature. (2024)</li>
       </ul>
 
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>査読付き論文/国際学会採択</h2>
@@ -82,8 +81,8 @@ export default function Home() {
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li><a href="/profile" style={{ color: '#0000EE' }}>略歴（研究・経歴・受賞歴）</a></li>
-        <li>
-          <img 
+<li><a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>         
+ <img 
             src="/images/tsubafont-icon.png" 
             alt="Tsubafont" 
             style={{ 
@@ -93,7 +92,6 @@ export default function Home() {
               marginBottom: '8px'
             }}
           />
-          <a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
         <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
