@@ -124,7 +124,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img
               src="/images/gadget4.jpg"
-              alt=”Kensington Slimblade Pro K72081JP"
+              alt="Kensington Slimblade Pro K72081JP"
               style={{
                 width: '250px',
                 height: '250px',
