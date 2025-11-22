@@ -25,7 +25,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img 
               src="/images/gadget1.jpg" 
-              alt="ガジェット1" 
+              alt="バルミューダ MoonKettle KPT02JP" 
               style={{ 
                 width: '250px', 
                 height: '250px', 
@@ -39,7 +39,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              ガジェット名1
+              BALUMUDA MoonKettle KPT02JP
             </p>
           </div>
           <div style={{ flex: 1 }}>
@@ -47,9 +47,10 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              ここにガジェットの説明を書きます。使い心地、デザインの特徴、
-              購入した理由、おすすめポイントなど。
-              複数行にわたって詳しく説明できます。
+              一度ずつ温度調整が可能な電気ポット．
+　　　　　　　お湯を沸かすと綺麗な音楽が再生される．
+　　　　　　　取手が満月のような美しい形状をしている．
+　　　　　　　とりあえず置いとくだけで侘び寂びが生まれる．
             </p>
           </div>
         </div>
@@ -60,7 +61,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img 
               src="/images/gadget2.jpg" 
-              alt="ガジェット2" 
+              alt="Happy Hacking Keyboard | Professional US配列 | PFU - 墨" 
               style={{ 
                 width: '250px', 
                 height: '250px', 
@@ -74,7 +75,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              ガジェット名2
+              Happy Hacking Keyboard | Professional US配列 | PFU - 墨
             </p>
           </div>
           <div style={{ flex: 1 }}>
@@ -82,8 +83,10 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              2つ目のガジェットについての説明。
-              機能、使い方、他の製品との比較など。
+              HHKBの配列に慣れてきた頃にHHKB配列の魅力を知る．
+　　　　　　　Type-Sにはないパチパチ感に惹かれた．
+　　　　　　　あまりにもっ合理的なHHKB US配列の沼にハマっている．
+　　　　　　　これまた墨色という色も美しい．
             </p>
           </div>
         </div>
@@ -94,7 +97,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img 
               src="/images/gadget3.jpg" 
-              alt="ガジェット3" 
+              alt="Happy Hacking Keyboard | Professional Type-S JIS配列 | PFU - 雪" 
               style={{ 
                 width: '250px', 
                 height: '250px', 
@@ -108,7 +111,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              ガジェット名3
+              Happy Hacking Keyboard | Professional Type-S JIS配列 | PFU - 雪
             </p>
           </div>
           <div style={{ flex: 1 }}>
@@ -116,7 +119,10 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              3つ目のガジェットについての説明。
+              初めて買ったHHKB．
+　　　　　　　高いので怖くて日本語配列のType Sを購入．
+　　　　　　　カフェや会議など静音性が求められる際に利用．
+　　　　　　　雪という名前にも惹かれた．
             </p>
           </div>
         </div>
@@ -129,4 +135,3 @@ export default function Furniture() {
     </div>
   );
 }
-
