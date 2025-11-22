@@ -91,7 +91,6 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
               marginBottom: '8px'
             }}
           />
-          <a href="/tsubafont" style={{ color: '#0000EE' }}>About Tsubafont</a>
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a></li>
         <li><a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a></li>
