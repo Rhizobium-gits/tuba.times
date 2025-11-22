@@ -21,134 +21,150 @@ export default function Furniture() {
       </nav>
       
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
-        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
-          <div style={{ flexShrink: 0 }}>
-            <img 
-              src="/images/gadget1.jpg" 
-              alt="バルミューダ MoonKettle KPT02JP" 
-              style={{ 
-                width: '250px', 
-                height: '250px', 
-                objectFit: 'cover',
-                border: '1px solid #ccc'
-              }} 
-            />
-            <p style={{ 
-              textAlign: 'center', 
-              marginTop: '10px', 
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              BALUMUDA MoonKettle KPT02JP
-            </p>
-          </div>
-          <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
-              投稿日: {new Date().toLocaleDateString()}
-            </p>
-            <p style={{ lineHeight: '1.8' }}>
-              一度ずつ温度調整が可能な電気ポット．お湯を沸かすと綺麗な音楽が再生される．取手が満月のような美しい形状をしている．とりあえず置いとくだけで侘び寂びが生まれる．
-            </p>
-          </div>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="/images/gadget1.jpg" 
+            alt="バルミューダ MoonKettle KPT02JP" 
+            style={{ 
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }} 
+          />
+          <p style={{ 
+            marginTop: '15px', 
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            BALMUDA MoonKettle KPT02JP
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: '#666', 
+            marginTop: '10px',
+            marginBottom: '15px' 
+          }}>
+            投稿日: {new Date().toLocaleDateString()}
+          </p>
+          <p style={{ 
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            一度ずつ温度調整が可能な電気ポット．お湯を沸かすと綺麗な音楽が再生される．取手が満月のような美しい形状をしている．とりあえず置いとくだけで侘び寂びが生まれる．
+          </p>
         </div>
       </article>
 
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
-        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
-          <div style={{ flexShrink: 0 }}>
-            <img 
-              src="/images/gadget2.jpg" 
-              alt="Happy Hacking Keyboard | Professional US配列 - 墨" 
-              style={{ 
-                width: '250px', 
-                height: '250px', 
-                objectFit: 'cover',
-                border: '1px solid #ccc'
-              }} 
-            />
-            <p style={{ 
-              textAlign: 'center', 
-              marginTop: '10px', 
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              HHKB | Professional US配列 - 墨
-            </p>
-          </div>
-          <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
-              投稿日: {new Date().toLocaleDateString()}
-            </p>
-            <p style={{ lineHeight: '1.8' }}>
-              HHKBの配列に慣れてきた頃にHHKB配列の魅力を知る．Type-Sにはないパチパチ感に惹かれた．あまりにもっ合理的なHHKB US配列の沼にハマっている．これまた墨色という色も美しい．
-            </p>
-          </div>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="/images/gadget2.jpg" 
+            alt="Happy Hacking Keyboard | Professional US配列 - 墨" 
+            style={{ 
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }} 
+          />
+          <p style={{ 
+            marginTop: '15px', 
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            HHKB | Professional US配列 - 墨
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: '#666', 
+            marginTop: '10px',
+            marginBottom: '15px' 
+          }}>
+            投稿日: {new Date().toLocaleDateString()}
+          </p>
+          <p style={{ 
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            HHKBの配列に慣れてきた頃にHHKB配列の魅力を知る．Type-Sにはないパチパチ感に惹かれた．あまりにも合理的なHHKB US配列の沼にハマっている．これまた墨色という色も美しい．
+          </p>
         </div>
       </article>
 
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
-        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
-          <div style={{ flexShrink: 0 }}>
-            <img 
-              src="/images/gadget3.jpg" 
-              alt="Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪" 
-              style={{ 
-                width: '250px', 
-                height: '250px', 
-                objectFit: 'cover',
-                border: '1px solid #ccc'
-              }} 
-            />
-            <p style={{ 
-              textAlign: 'center', 
-              marginTop: '10px', 
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              HHKB | Professional Type-S JIS配列 - 雪
-            </p>
-          </div>
-          <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
-              投稿日: {new Date().toLocaleDateString()}
-            </p>
-            <p style={{ lineHeight: '1.8' }}>
-              初めて買ったHHKB．高いので怖くて日本語配列のType Sを購入．カフェや会議など静音性が求められる際に利用．雪という名前にも惹かれた．
-            </p>
-          </div>
+        <div style={{ textAlign: 'center' }}>
+          <img 
+            src="/images/gadget3.jpg" 
+            alt="Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪" 
+            style={{ 
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }} 
+          />
+          <p style={{ 
+            marginTop: '15px', 
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            HHKB | Professional Type-S JIS配列 - 雪
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: '#666', 
+            marginTop: '10px',
+            marginBottom: '15px' 
+          }}>
+            投稿日: {new Date().toLocaleDateString()}
+          </p>
+          <p style={{ 
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            初めて買ったHHKB．高いので怖くて日本語配列のType Sを購入．カフェや会議など静音性が求められる際に利用．雪という名前にも惹かれた．
+          </p>
         </div>
       </article>
 
-<article style={{ marginTop: '40px', marginBottom: '60px' }}>
-        <div style={{ display: 'flex', gap: '30px', alignItems: 'flex-start' }}>
-          <div style={{ flexShrink: 0 }}>
-            <img
-              src="/images/gadget4.jpg"
-              alt="Kensington Slimblade Pro K72081JP"
-              style={{
-                width: '250px',
-                height: '250px',
-                objectFit: 'cover',
-                border: '1px solid #ccc'
-              }}
-            />
-            <p style={{
-              textAlign: 'center',
-              marginTop: '10px',
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>
-              Kensington Slimblade Pro K72081JP
-            </p>
-          </div>
-          <div style={{ flex: 1 }}>
-            <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>
-              投稿日: {new Date().toLocaleDateString()}
-            </p>
-            <p style={{ lineHeight: '1.8' }}>
-              奇抜なデザインが気になって購入した．慣れると結構使いやすく，ホールドするタイプよりも手が疲れない．慣れると沼から抜け出せない
-            </p>
-          </div>
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget4.jpg"
+            alt="Kensington Slimblade Pro K72081JP"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            Kensington Slimblade Pro K72081JP
+          </p>
+          <p style={{ 
+            fontSize: '14px', 
+            color: '#666', 
+            marginTop: '10px',
+            marginBottom: '15px' 
+          }}>
+            投稿日: {new Date().toLocaleDateString()}
+          </p>
+          <p style={{ 
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            奇抜なデザインが気になって購入した．慣れると結構使いやすく，ホールドするタイプよりも手が疲れない．慣れると沼から抜け出せない
+          </p>
         </div>
       </article>
 
