@@ -23,93 +23,23 @@ export default function Seasons() {
         <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>
       </nav>
 
-      {/* 2025年1月 */}
+
+
+
+
+      {/* 2025年11月 */}
       <article style={{ 
         marginTop: '40px', 
         marginBottom: '60px',
         paddingBottom: '40px',
         borderBottom: '1px solid #ddd'
       }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2025年1月</h2>
-        
-        <div style={{ marginBottom: '30px' }}>
-          <img 
-            src="/images/season-202501.jpg" 
-            alt="2025年1月の景色" 
-            style={{ 
-              width: '100%', 
-              maxHeight: '500px',
-              objectFit: 'cover',
-              border: '1px solid #ccc',
-              marginBottom: '15px'
-            }} 
-          />
-          <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
-            📍 撮影場所: [場所の名前]
-          </p>
-        </div>
-
-        <div style={{ lineHeight: '1.8' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
-          <p style={{ marginBottom: '15px' }}>
-            ここに1月の振り返りを書きます。
-            その月にあった出来事、感じたこと、学んだこと、
-            印象に残ったエピソードなどを自由に綴ってください。
-          </p>
-          <p>
-            写真についての感想や、撮影時のエピソード、
-            その場所の雰囲気なども書くと良いでしょう。
-          </p>
-        </div>
-      </article>
-
-      {/* 2024年12月 */}
-      <article style={{ 
-        marginTop: '40px', 
-        marginBottom: '60px',
-        paddingBottom: '40px',
-        borderBottom: '1px solid #ddd'
-      }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2024年12月</h2>
-        
-        <div style={{ marginBottom: '30px' }}>
-          <img 
-            src="/images/season-202412.jpg" 
-            alt="2024年12月の景色" 
-            style={{ 
-              width: '100%', 
-              maxHeight: '500px',
-              objectFit: 'cover',
-              border: '1px solid #ccc',
-              marginBottom: '15px'
-            }} 
-          />
-          <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
-            📍 撮影場所: [場所の名前]
-          </p>
-        </div>
-
-        <div style={{ lineHeight: '1.8' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
-          <p style={{ marginBottom: '15px' }}>
-            12月の振り返りをここに書きます。
-          </p>
-        </div>
-      </article>
-
-      {/* 2024年11月 */}
-      <article style={{ 
-        marginTop: '40px', 
-        marginBottom: '60px',
-        paddingBottom: '40px',
-        borderBottom: '1px solid #ddd'
-      }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2024年11月</h2>
+        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2025年11月</h2>
         
         <div style={{ marginBottom: '30px' }}>
           <img 
             src="/images/season-202411.jpg" 
-            alt="2024年11月の景色" 
+            alt="2025年11月の景色" 
             style={{ 
               width: '100%', 
               maxHeight: '500px',
@@ -119,17 +49,22 @@ export default function Seasons() {
             }} 
           />
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
-            📍 撮影場所: [場所の名前]
+             撮影場所: 河口湖
           </p>
         </div>
 
         <div style={{ lineHeight: '1.8' }}>
           <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
           <p style={{ marginBottom: '15px' }}>
-            11月の振り返りをここに書きます。
+            今月は同窓会の幹事を引き受けたりTechnetopeの開発合宿をおこなったり，研究費申請を行ったりした．主な遠出としては富士山麓河口湖紅葉祭りに参加し，そのまま富士眺望の湯ゆらりでゆっくりしたり江ノ島で朝焼けを見たりした．後は，ORF．それまでにゲノム解析を終わらせて発表するつもりがラボのMiSeqが故障してしまいそれが困難となった．割には発表の機会が多く，中間発表とか韓国研修のための英語発表などがあった．
           </p>
         </div>
       </article>
+
+
+
+
+
 
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
       <p style={{ fontSize: '12px', textAlign: 'right', marginTop: '20px' }}>
