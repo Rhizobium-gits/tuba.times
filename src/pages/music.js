@@ -5,10 +5,9 @@
             padding: '20px',
             borderRadius: '8px'
           }}>
-            <video controls style={{ width: '100%', marginBottom: '10px' }}>
-              <source src="/music/I Love Unchi.mp4" type="video/mp4" />
-              お使いのブラウザは動画再生に対応していません。
-            </video>
+            <audio controls style={{ width: '100%', marginBottom: '10px' }}>
+              <source src="/music/I Love Unchi.m4a" type="audio/mp4" />
+              お使いのブラウザは音声再生に対応していません。
+            </audio>
           </div>
         </div>
-
