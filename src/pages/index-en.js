@@ -77,7 +77,7 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
         </li>
       </ol>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Links</h2>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Tsuba.times</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li><a href="/profile-en" style={{ color: '#0000EE' }}>Biography (Research, Career, Awards)</a></li>
         <li><a href="/tsubafont" style={{ color: '#0000EE' }}>About Tsubafont</a>

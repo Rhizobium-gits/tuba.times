@@ -78,7 +78,7 @@ export default function Home() {
         </li>
       </ol>
       
-      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>リンク</h2>
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Tsuba.times</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li><a href="/profile" style={{ color: '#0000EE' }}>略歴（研究・経歴・受賞歴）</a></li>
 <li><a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>         
