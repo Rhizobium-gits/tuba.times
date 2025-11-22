@@ -58,7 +58,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img 
               src="/images/gadget2.jpg" 
-              alt="Happy Hacking Keyboard | Professional US配列 | PFU - 墨" 
+              alt="Happy Hacking Keyboard | Professional US配列 - 墨" 
               style={{ 
                 width: '250px', 
                 height: '250px', 
@@ -105,7 +105,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              Happy Hacking Keyboard | Professional Type-S JIS配列 | PFU - 雪
+              Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪
             </p>
           </div>
           <div style={{ flex: 1 }}>
