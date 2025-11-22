@@ -47,10 +47,7 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              一度ずつ温度調整が可能な電気ポット．
-　　　　　　　お湯を沸かすと綺麗な音楽が再生される．
-　　　　　　　取手が満月のような美しい形状をしている．
-　　　　　　　とりあえず置いとくだけで侘び寂びが生まれる．
+              一度ずつ温度調整が可能な電気ポット．お湯を沸かすと綺麗な音楽が再生される．取手が満月のような美しい形状をしている．とりあえず置いとくだけで侘び寂びが生まれる．
             </p>
           </div>
         </div>
@@ -75,7 +72,7 @@ export default function Furniture() {
               fontSize: '16px',
               fontWeight: 'bold'
             }}>
-              Happy Hacking Keyboard | Professional US配列 | PFU - 墨
+              Happy Hacking Keyboard | Professional US配列 - 墨
             </p>
           </div>
           <div style={{ flex: 1 }}>
@@ -83,10 +80,7 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              HHKBの配列に慣れてきた頃にHHKB配列の魅力を知る．
-　　　　　　　Type-Sにはないパチパチ感に惹かれた．
-　　　　　　　あまりにもっ合理的なHHKB US配列の沼にハマっている．
-　　　　　　　これまた墨色という色も美しい．
+              HHKBの配列に慣れてきた頃にHHKB配列の魅力を知る．Type-Sにはないパチパチ感に惹かれた．あまりにもっ合理的なHHKB US配列の沼にハマっている．これまた墨色という色も美しい．
             </p>
           </div>
         </div>
@@ -97,7 +91,7 @@ export default function Furniture() {
           <div style={{ flexShrink: 0 }}>
             <img 
               src="/images/gadget3.jpg" 
-              alt="Happy Hacking Keyboard | Professional Type-S JIS配列 | PFU - 雪" 
+              alt="Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪" 
               style={{ 
                 width: '250px', 
                 height: '250px', 
@@ -119,10 +113,7 @@ export default function Furniture() {
               投稿日: {new Date().toLocaleDateString()}
             </p>
             <p style={{ lineHeight: '1.8' }}>
-              初めて買ったHHKB．
-　　　　　　　高いので怖くて日本語配列のType Sを購入．
-　　　　　　　カフェや会議など静音性が求められる際に利用．
-　　　　　　　雪という名前にも惹かれた．
+              初めて買ったHHKB．高いので怖くて日本語配列のType Sを購入．カフェや会議など静音性が求められる際に利用．雪という名前にも惹かれた．
             </p>
           </div>
         </div>
