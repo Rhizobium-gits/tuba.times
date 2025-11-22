@@ -45,7 +45,7 @@ export default function Furniture() {
             marginTop: '10px',
             marginBottom: '15px' 
           }}>
-            投稿日: {new Date().toLocaleDateString()}
+            投稿日:2025年11月22日
           </p>
           <p style={{ 
             lineHeight: '1.8',
@@ -82,7 +82,7 @@ export default function Furniture() {
             marginTop: '10px',
             marginBottom: '15px' 
           }}>
-            投稿日: {new Date().toLocaleDateString()}
+            投稿日:2025年11月22日
           </p>
           <p style={{ 
             lineHeight: '1.8',
@@ -119,7 +119,7 @@ export default function Furniture() {
             marginTop: '10px',
             marginBottom: '15px' 
           }}>
-            投稿日: {new Date().toLocaleDateString()}
+            投稿日:2025年11月22日
           </p>
           <p style={{ 
             lineHeight: '1.8',
@@ -156,7 +156,7 @@ export default function Furniture() {
             marginTop: '10px',
             marginBottom: '15px' 
           }}>
-            投稿日: {new Date().toLocaleDateString()}
+            投稿日:2025年11月22日
           </p>
           <p style={{ 
             lineHeight: '1.8',
