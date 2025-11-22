@@ -24,7 +24,7 @@ export default function Music() {
         <h2 style={{ fontSize: '20px', marginBottom: '20px' }}>プレイリスト</h2>
         
         <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '15px' }}>I Love Unchi</h3>
+          <h3 style={{ fontSize: '18px', marginBottom: '15px' }}>I Love Unchi - composition:Jundai OKANO</h3>
           <div style={{ 
             border: '1px solid #ccc', 
             padding: '20px',
