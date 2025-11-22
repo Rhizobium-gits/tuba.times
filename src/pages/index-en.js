@@ -17,7 +17,7 @@ export default function Home() {
         borderBottom: '2px solid #000000',
         paddingBottom: '10px'
       }}>
-        Tsubasa SATO
+        Welcome to Tsubasa SATO's Website
       </h1>
       
 <div style={{ textAlign: 'center', margin: '30px 0' }}>
@@ -28,7 +28,6 @@ export default function Home() {
             width: '100%',
             maxWidth: '400px',
             height: 'auto',
-            border: '2px solid #000000'
           }}
         />
       </div>
@@ -37,7 +36,7 @@ export default function Home() {
         <p style={{ lineHeight: '1.8' }}>
           1st Year Student, Faculty of Environment and Information Studies, Keio University<br />
           Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji Fukuda)<br />
-          Laboratory of Computational Systems Biology, Medical Research Institute, Institute of Science Tokyo (formerly Tokyo Medical and Dental University) (PI: Teppei Shimamura)
+Department of Computational and Systems Biology, Medical Research Laboratory, Institute of Science Tokyo
         </p>
       </div>
       
@@ -74,7 +73,6 @@ export default function Home() {
         </li>
         <li>
           <strong>Tsubasa SATO</strong> (2023). 
-          "Survivability and life support in sealed mini-ecosystems with simulated planetary soils." 
           <i>7th MVA Global Workshop & Symposium (MVA2023)</i>
         </li>
       </ol>
@@ -82,7 +80,7 @@ export default function Home() {
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Links</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li><a href="/profile-en" style={{ color: '#0000EE' }}>Biography (Research, Career, Awards)</a></li>
-        <li>
+        <li><a href="/tsubafont" style={{ color: '#0000EE' }}>About Tsubafont</a>
           <img 
             src="/images/tsubafont-icon.png" 
             alt="Tsubafont" 
