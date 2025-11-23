@@ -59,8 +59,8 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Works</h2>
       <ul style={{ lineHeight: '1.8' }}>
+　　　　<li><a href="https://www.youtube.com/watch?v=UwiAPBqvmaM" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Technetope (2025)</a></li>
         <li>Nature to Tech, Tech to Nature. (2024)</li>
-        <li>Technetope (2025)</li>
       </ul>
 
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Publications</h2>
@@ -92,9 +92,7 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
             }}
           />
         </li>
-        <a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a>
-        <a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a>
-　　　　<a href="/music" style={{ color: '#0000EE' }}>Music</a>
+        <a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a><a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a><a href="/music" style={{ color: '#0000EE' }}>Music</a><a href="https://www.youtube.com/watch?v=W8RCRGdCC7I" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">A video of someone working hard</a>
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />

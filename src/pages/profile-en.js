@@ -36,15 +36,22 @@ export default function ProfileEn() {
       <p style={{ lineHeight: '1.8' }}>
         I actively pursue interdisciplinary approaches spanning microbiology, systems biology, and human spaceflight studies.
       </p>
+
+<h2 style={{ fontSize: '20px', marginTop: '30px' }}>Academic Society</h2>
+      <ul style={{ lineHeight: '1.8' }}>
+        <li>Member of The Molecular Biology Society of Japan (MBSJ)(25-)</li>
+        <li>Member of The Intestinal Microbiology Society (IMS)(25-)</li>
+      </ul>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Career</h2>
       <ul style={{ lineHeight: '1.8' }}>
         <li>Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji FUKUDA)</li>
         <li>Department of Computational and Systems Biology, Medical Research Laboratory, Institute of Science Tokyo (formerly Tokyo Medical and Dental University) (PI: Teppei SHIMAMURA)</li>
         <li>Deputy Director Intern, ADvance Lab</li>
-        <li>Space Division Leader, ADvance Lab</li>
         <li>Intern, 北京聚力维度科技有限公司 (Beijing, China)</li>
-        <li>Dispatch Work, Laboratory of Systems Biology, Graduate School of Medicine, Nagoya University (PI: Teppei SHIMAMURA)</li>
+　　　　<li>Space Division Leader, ADvance Lab</li>
+　      <li>Completed internship at the National Agriculture and Food Research Organization</li>
+        <li>Dispatched by Department of Computational Systems Biology, Nagoya University Graduate School of Medicine (PI: Teppei SHIMAMURA)</li>
       </ul>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Awards</h2>

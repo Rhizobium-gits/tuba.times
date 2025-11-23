@@ -59,7 +59,7 @@ export default function Home() {
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>作品</h2>
       <ul style={{ lineHeight: '1.8' }}>
-        <li>Technetope (2025)</li>
+        <li><a href="https://www.youtube.com/watch?v=UwiAPBqvmaM" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Technetope (2025)</a></li>
         <li>Nature to Tech, Tech to Nature. (2024)</li>
       </ul>
 
@@ -93,9 +93,7 @@ export default function Home() {
             }}
           />
         </li>
-        <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
-        <a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a>
-　　　　<a href="/music" style={{ color: '#0000EE' }}>音楽</a>
+        <a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a><a href="/music" style={{ color: '#0000EE' }}>音楽</a><li><a href="https://www.youtube.com/watch?v=W8RCRGdCC7I" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">なんか頑張ってる動画</a></li>
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
