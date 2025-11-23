@@ -93,6 +93,31 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
           />
         </li>
         <a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a> - <a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a> - <a href="/music" style={{ color: '#0000EE' }}>Music</a> - <a href="https://www.youtube.com/watch?v=W8RCRGdCC7I" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">A video of someone working hard</a>
+          
+          <img
+            src="/images/MITA.jpg"
+            alt="三田キャンパス"
+            style={{
+              width: '100%',
+              maxHeight: '500px',
+              objectFit: 'cover',
+              border: '1px solid #ccc',
+              marginBottom: '15px'
+            }}
+          />
+          
+          <img
+            src="/images/SFC.jpg"
+            alt="SFC"
+            style={{
+              width: '100%',
+              maxHeight: '500px',
+              objectFit: 'cover',
+              border: '1px solid #ccc',
+              marginBottom: '15px'
+            }}
+          />
+
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
