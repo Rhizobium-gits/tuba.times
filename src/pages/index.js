@@ -93,7 +93,7 @@ export default function Home() {
             }}
           />
         </li>
-        <a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a> - <a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a> - <a href="/music" style={{ color: '#0000EE' }}>音楽</a> - <a href="https://www.youtube.com/watch?v=W8RCRGdCC7I" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">なんか頑張ってる動画</a>
+        {<a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a> - <a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a> - <a href="/music" style={{ color: '#0000EE' }}>音楽</a> - <a href="https://www.youtube.com/watch?v=W8RCRGdCC7I" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">なんか頑張ってる動画</a>}
 
           <img
             src="/images/MITA.jpg"
