@@ -37,13 +37,20 @@ export default function Profile() {
         微生物学，システム生物学，有人宇宙学にまたがる学際的アプローチを積極的に推進しています．
       </p>
       
+<h2 style={{ fontSize: '20px', marginTop: '30px' }}>所属学会</h2>
+      <ul style={{ lineHeight: '1.8' }}>
+        <li>日本分子生物学会(25-)</li>
+        <li>腸内細菌学会(25-)</li>
+      </ul>
+
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>
       <ul style={{ lineHeight: '1.8' }}>
         <li>慶應義塾大学 先端生命科学研究所 腸内細菌叢グループ (PI: 福田真嗣)</li>
         <li>東京科学大学（旧東京医科歯科大学）難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)</li>
-        <li>ADvance Lab 副所長インターン</li>
-        <li>ADvance Lab 宇宙部門リーダー</li>
+        <li>ADvance Lab 副所長</li>
         <li>北京聚力維度科技有限公司 インターン（中国・北京）</li>
+　　　　<li>ADvance Lab 宇宙部門リーダー</li>
+　　　　<li>農研機構 西日本ん王業研究センター インターン</li>
         <li>名古屋大学大学院医学系研究科 システム生物学研究室 派遣勤務 (PI: 島村徹平)</li>
       </ul>
       
@@ -54,7 +61,7 @@ export default function Profile() {
         </li>
         <li>日本植物生理学会(JSPP) 奨励賞 (第64回年会 高校生発表の部)</li>
         <li>京都大学宇宙ユニットシンポジウム(第16回) 優秀賞 (京都大学宇宙ユニット)</li>        
-        <li>銀賞 日本生化学 (JBS）（第95回大会、高校生発表部門）</li>
+        <li>銀賞 日本生化学会 (JBS）（第95回大会、高校生発表部門）</li>
       </ul>
 
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
