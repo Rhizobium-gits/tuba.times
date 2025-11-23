@@ -92,9 +92,9 @@ Department of Computational and Systems Biology, Medical Research Laboratory, In
             }}
           />
         </li>
-        <li><a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a></li>
-        <li><a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a></li>
-　　　　<li><a href="/music" style={{ color: '#0000EE' }}>Music</a></li>
+        <a href="/furniture" style={{ color: '#0000EE' }}>Favorite Gadgets</a>
+        <a href="/seasons" style={{ color: '#0000EE' }}>Seasonal Scenery</a>
+　　　　<a href="/music" style={{ color: '#0000EE' }}>Music</a>
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />

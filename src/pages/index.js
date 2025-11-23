@@ -81,10 +81,10 @@ export default function Home() {
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Tsuba.times</h2>
       <ul style={{ listStyleType: 'disc' }}>
         <li><a href="/profile" style={{ color: '#0000EE' }}>略歴（研究・経歴・受賞歴）</a></li>
-<li><a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubafont について</a>         
+<li><a href="/tsubafont" style={{ color: '#0000EE' }}>Tsubaふぉんと について</a>         
  <img 
             src="/images/tsubafont-icon.png" 
-            alt="Tsubafont" 
+            alt="Tsubaふぉんと" 
             style={{ 
               width: '300px', 
               height: 'auto', 
@@ -94,8 +94,8 @@ export default function Home() {
           />
         </li>
         <li><a href="/furniture" style={{ color: '#0000EE' }}>お気に入りのガジェット</a></li>
-        <li><a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a></li>
-　　　　<li><a href="/music" style={{ color: '#0000EE' }}>音楽</a></li>
+        <a href="/seasons" style={{ color: '#0000EE' }}>季節の景色</a>
+　　　　<a href="/music" style={{ color: '#0000EE' }}>音楽</a>
       </ul>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
