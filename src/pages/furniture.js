@@ -24,7 +24,7 @@ export default function Furniture() {
         <div style={{ textAlign: 'center' }}>
           <img
             src="/images/gadget6.jpg"
-            alt="cmf watch pro 2"
+            alt="cmf WATCH PRO 2"
             style={{
               width: '100%',
               maxWidth: '400px',
@@ -37,7 +37,7 @@ export default function Furniture() {
             fontSize: '18px',
             fontWeight: 'bold'
           }}>
-            cmf watch pro 2
+            cmf WATCH PRO 2
           </p>
           <p style={{
             fontSize: '14px',
@@ -52,7 +52,7 @@ export default function Furniture() {
             textAlign: 'left',
             marginTop: '15px'
           }}>
-            Nothingのサブブランドcmfの製品．Nothingらしいシンプルで洗練されたモダンなデザインに惹かれて購入．Amazonブラックフライデーにて38％オフで購入できた．朝が弱いので明日からはこの時計のアラームで起きれるようになりたい．が，一個懸念テント氏はこれまで作業中は時計を外す癖があったのでできる限りずっとつけ流ことに慣れる必要があることが挙げられる．
+            Nothingのサブブランドcmfの製品．Nothingらしいシンプルで洗練されたモダンなデザインに惹かれて購入．Amazonブラックフライデーにて38％オフで購入できた．朝が弱いので明日からはこの時計のアラームで起きれるようになりたい．
           </p>
         </div>
       </article>
@@ -135,7 +135,7 @@ export default function Furniture() {
         <div style={{ textAlign: 'center' }}>
           <img 
             src="/images/gadget2.jpg" 
-            alt="Happy Hacking Keyboard | Professional US配列 - 墨" 
+            alt="Happy Hacking Keyboard | Professional HYBRID US配列 - 墨" 
             style={{ 
               width: '100%',
               maxWidth: '400px',
@@ -172,7 +172,7 @@ export default function Furniture() {
         <div style={{ textAlign: 'center' }}>
           <img 
             src="/images/gadget3.jpg" 
-            alt="Happy Hacking Keyboard | Professional Type-S JIS配列 - 雪" 
+            alt="Happy Hacking Keyboard | Professional Type-S HYBRID JIS配列 - 雪" 
             style={{ 
               width: '100%',
               maxWidth: '400px',
