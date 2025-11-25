@@ -96,6 +96,43 @@ export default function Furniture() {
 
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget7.jpg"
+            alt="KODAK PIXPRO FZ55"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',  
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}> 
+            KODAK PIXPRO FZ55
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}> 
+            投稿日:2025年11月22日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            レトロな写真が撮れるコンパクトデジタルカメラ．Instagramで見つけて購入．中国に行く直前に購入．どんなシーンも切り取ることができる．朝でも昼でも夜でも場所を選ばずに想像以上のシーンをカットしてくれる．ポケットサイズのため，毎日ポケットに入れて持ち歩いている．
+          </p>
+        </div>
+      </article>
+
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
           <img 
             src="/images/gadget2.jpg" 
             alt="Happy Hacking Keyboard | Professional US配列 - 墨" 
