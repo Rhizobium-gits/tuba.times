@@ -51,8 +51,7 @@ export default function Seasons() {
              撮影場所: 河口湖
           </p>
 
-        <div style={{ marginBottom: '30px' }}>
-          <img 
+        <img 
             src="/images/season-202411-2.jpg" 
             alt="2025年11月の景色" 
             style={{ 
@@ -101,7 +100,6 @@ export default function Seasons() {
              撮影場所: 江ノ島沖
           </p>
 
-        <div style={{ marginBottom: '30px' }}>
           <img
             src="/images/season-202410-2.jpg"
             alt="2025年10月の景色2"
@@ -119,7 +117,7 @@ export default function Seasons() {
         </div>
 
         <div style={{ lineHeight: '1.8' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り$
+          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
           <p style={{ marginBottom: '15px' }}>
             今月は割と自由な時間の多い月だった．夏季休暇明けということもあり，実験や研究もそこまで忙しくなかった．今月の暇さが，来月自分を苦しめることになる気がする．恐ろしや，，，．主なお出かけとしてはYEG(横浜イングリッシュガーデン)に行った．艶やかな薔薇が咲き誇っており美しかった．
           </p>
@@ -168,7 +166,7 @@ export default function Seasons() {
         </div>
       
         <div style={{ lineHeight: '1.8' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り$
+          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
           <p style={{ marginBottom: '15px' }}>
             実験系が長引き，もう少し鶴岡に滞在することになった．札幌にも行った．友人に北海道で一番美味い新武咲屋というラーメン屋さんに連れて行ってもらった．ようやく鶴岡という街での生活に諦めがつき，最近はスーパーで野菜を買って電子レンジのみでできる鍋しか食べていない気がする．一応野菜を摂取できているので8月のように頭がおかしくな理想にはなっていない．しかし，とにかく綺麗な自分のフライパンさえあれば色々作れるレパートリーが増えるのにという苛立ちと，湘南に帰ったら自炊をしようというモチベーションに駆られている．久しぶりに実家に帰省し，家族で大阪関西万博に行ったり免許を撮りに行ったりした．あと，尾道旅行もした．免許を取ったので親同席で車の練習をしたが，実家の車が3ナンバーで横幅があったので慣れるまでに時間がかかった．
           </p>
@@ -196,7 +194,6 @@ export default function Seasons() {
               marginBottom: '15px'
             }}
           />
-
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 上海タワーを望む
 
@@ -211,14 +208,13 @@ export default function Seasons() {
               marginBottom: '15px'
             }}
           />
-
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 北京故宮
           </p>
         </div>
 
         <div style={{ lineHeight: '1.8' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り$
+          <h3 style={{ fontSize: '18px', marginBottom: '10px' }}>今月の振り返り</h3>
           <p style={{ marginBottom: '15px' }}>
             中国にインターンに行った．旅行も兼ねていたため，上海や北京の主要な施設の多くを回ることができた．あとは今月から鶴岡で実験が始まった．大学に入って初めて行う実験なので楽しみだ．
           </p>
