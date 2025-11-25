@@ -50,8 +50,10 @@ export default function Seasons() {
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 河口湖
           </p>
+        </div>
 
-        <img 
+        <div style={{ marginBottom: '30px' }}>
+          <img 
             src="/images/season-202411-2.jpg" 
             alt="2025年11月の景色" 
             style={{ 
@@ -99,7 +101,9 @@ export default function Seasons() {
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 江ノ島沖
           </p>
+        </div>
 
+        <div style={{ marginBottom: '30px' }}>
           <img
             src="/images/season-202410-2.jpg"
             alt="2025年10月の景色2"
@@ -197,7 +201,9 @@ export default function Seasons() {
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 上海タワーを望む
         </p>
+        </div>
 
+        <div style={{ marginBottom: '30px' }}>
         <img
             src="/images/season-202408-2.jpg"
             alt="2025年8月の景色2"
@@ -229,14 +235,4 @@ export default function Seasons() {
       </p>
     </div>
   );
-
-
-
-      <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
-      <p style={{ fontSize: '12px', textAlign: 'right', marginTop: '20px' }}>
-        Last updated: {new Date().toLocaleDateString('ja-JP')}
-      </p>
-    </div>
-  );
-
 }
