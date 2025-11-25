@@ -26,7 +26,6 @@ export default function Seasons() {
 
 
 
-
       {/* 2025年11月 */}
       <article style={{ 
         marginTop: '40px', 
@@ -51,7 +50,6 @@ export default function Seasons() {
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 河口湖
           </p>
-        </div>
 
         <div style={{ marginBottom: '30px' }}>
           <img 
@@ -102,7 +100,6 @@ export default function Seasons() {
           <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 江ノ島沖
           </p>
-        </div>
 
         <div style={{ marginBottom: '30px' }}>
           <img
@@ -153,7 +150,6 @@ export default function Seasons() {
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 鶴岡タウンキャンパス研修棟
    　　 </p>
-        </div>
 
         <img
             src="/images/season-202409.jpg"
@@ -200,7 +196,7 @@ export default function Seasons() {
               marginBottom: '15px'
             }}
           />
-        </div>
+
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 上海タワーを望む
 
