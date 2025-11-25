@@ -180,7 +180,7 @@ export default function Seasons() {
         paddingBottom: '40px',
         borderBottom: '1px solid #ddd'
       }}>
-        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2025年9月</h2>
+        <h2 style={{ fontSize: '20px', marginBottom: '15px' }}>2025年8月</h2>
 
         <div style={{ marginBottom: '30px' }}>
           <img
@@ -196,6 +196,7 @@ export default function Seasons() {
           />
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 上海タワーを望む
+        </p>
 
         <img
             src="/images/season-202408-2.jpg"
