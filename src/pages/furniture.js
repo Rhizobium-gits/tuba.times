@@ -22,6 +22,43 @@ export default function Furniture() {
       
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget6.jpg"
+            alt="cmf watch pro 2"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            cmf watch pro 2
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月25日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            Nothingのサブブランドcmfの製品．Nothingらしいシンプルで洗練されたモダンなデザインに惹かれて購入．Amazonブラックフライデーにて38％オフで購入できた．朝が弱いので明日からはこの時計のアラームで起きれるようになりたい．が，一個懸念テント氏はこれまで作業中は時計を外す癖があったのでできる限りずっとつけ流ことに慣れる必要があることが挙げられる．
+          </p>
+        </div>
+      </article>
+
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
           <img 
             src="/images/gadget1.jpg" 
             alt="バルミューダ MoonKettle KPT02JP" 
@@ -164,6 +201,43 @@ export default function Furniture() {
             marginTop: '15px'
           }}>
             奇抜なデザインが気になって購入した．慣れると結構使いやすく，ホールドするタイプよりも手が疲れない．慣れると沼から抜け出せない．
+          </p>
+        </div>
+      </article>
+
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget5.jpg"
+            alt="Apple ipad 第8世代"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            Apple ipad 第8世代
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月22日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            高校時代から使用している．現在は大学での講義ノートとして使用している．
           </p>
         </div>
       </article>
