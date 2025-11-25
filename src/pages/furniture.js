@@ -148,7 +148,7 @@ export default function Furniture() {
             fontSize: '18px',
             fontWeight: 'bold'
           }}>
-            HHKB | Professional US配列 - 墨
+            HHKB | Professional HYBRID US配列 - 墨
           </p>
           <p style={{ 
             fontSize: '14px', 
@@ -185,7 +185,7 @@ export default function Furniture() {
             fontSize: '18px',
             fontWeight: 'bold'
           }}>
-            HHKB | Professional Type-S JIS配列 - 雪
+            HHKB | Professional HYBRID Type-S JIS配列 - 雪
           </p>
           <p style={{ 
             fontSize: '14px', 
