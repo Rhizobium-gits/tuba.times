@@ -34,7 +34,7 @@ export default function Furniture() {
           />
             <p style={{
   marginTop: '15px',
-  fontSize: '18px',
+  fontSize: '24px',
   fontWeight: 300,
   fontFamily: '"Bitcount Grid Single Ink", system-ui'
 }}>
@@ -257,7 +257,7 @@ export default function Furniture() {
           />
  <p style={{
   marginTop: '15px',          
-  fontSize: '18px',          
+  fontSize: '24px',          
   fontWeight: 300,            
   fontFamily: '"Bitcount Grid Single Ink", system-ui'
 }}>
