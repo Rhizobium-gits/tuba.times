@@ -49,11 +49,11 @@ export default function Music() {
       animationRef.current = requestAnimationFrame(draw);
       analyser.getByteTimeDomainData(dataArray);
 
-      ctx.fillStyle = '#1a1a2e';
+      ctx.fillStyle = '#ffffff';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = '#00d4ff';
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = '#000000';
       ctx.beginPath();
 
       const sliceWidth = canvas.width / bufferLength;
@@ -128,20 +128,18 @@ export default function Music() {
         <div style={{ marginBottom: '40px' }}>
           <h3 style={{ fontSize: '18px', marginBottom: '15px' }}>I Love Unchi - composition: Jundai OKANO</h3>
           <div style={{
-            border: '1px solid #ccc',
-            padding: '20px',
-            borderRadius: '8px',
-            backgroundColor: '#1a1a2e'
+            border: '1px solid #000',
+            padding: '15px'
           }}>
             <canvas
               ref={canvasRef}
               width={760}
-              height={150}
+              height={100}
               style={{
                 width: '100%',
-                height: '150px',
-                borderRadius: '4px',
-                marginBottom: '15px'
+                height: '100px',
+                border: '1px solid #ccc',
+                marginBottom: '10px'
               }}
             />
             <audio
@@ -151,37 +149,19 @@ export default function Music() {
             >
               <source src="/music/i-love-unchi.wav" type="audio/wav" />
             </audio>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-              <button
-                onClick={isPlaying ? handlePause : handlePlay}
-                style={{
-                  padding: '10px 30px',
-                  fontSize: '16px',
-                  cursor: 'pointer',
-                  backgroundColor: '#00d4ff',
-                  border: 'none',
-                  borderRadius: '25px',
-                  color: '#1a1a2e',
-                  fontWeight: 'bold'
-                }}
-              >
-                {isPlaying ? '⏸ 一時停止' : '▶ 再生'}
-              </button>
-              <input
-                type="range"
-                min="0"
-                max="1"
-                step="0.01"
-                defaultValue="1"
-                onChange={(e) => {
-                  if (audioRef.current) {
-                    audioRef.current.volume = e.target.value;
-                  }
-                }}
-                style={{ flex: 1 }}
-              />
-              <span style={{ color: '#ffffff', fontSize: '14px' }}>🔊</span>
-            </div>
+            <button
+              onClick={isPlaying ? handlePause : handlePlay}
+              style={{
+                padding: '5px 15px',
+                fontSize: '14px',
+                cursor: 'pointer',
+                backgroundColor: '#fff',
+                border: '1px solid #000',
+                color: '#000'
+              }}
+            >
+              {isPlaying ? '■ 停止' : '▶ 再生'}
+            </button>
           </div>
         </div>
       </article>
