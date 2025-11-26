@@ -245,6 +245,43 @@ export default function Furniture() {
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
           <img
+            src="/images/gadget8.jpg"
+            alt="Nothing ear(a)"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            NOTHING ear(a)
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月22日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            Nothingのワイヤレスイヤホン．初めてのNothing製品．もう一個上のグレードにするか悩んだが，大きな違いがワイヤレス充電しかなく，そもそもワイヤレス充電をしないと思ったのでコンパクトなear(a)を購入．ノイズキャンセルも外部音取り込みも優秀で，音質も良い．Air Podsはユーザーが多くありきたりな感じがしたのでこのイヤホンにした．Nothing製品はNothing Xというアプリで製品を管理するのだが，このアプリも非常に格好がいい．
+          </p>
+        </div>
+      </article>
+
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
             src="/images/gadget5.jpg"
             alt="Apple ipad 第8世代"
             style={{
