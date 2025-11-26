@@ -10,11 +10,19 @@ export default function Music() {
   const analyserRef = useRef(null);
   const audioContextRef = useRef(null);
   const spectrogramDataRef = useRef([]);
-  const maxSpectrumRef = useRef(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [maxSpectrum, setMaxSpectrum] = useState(0);
+  
+  // 動的な最大値を追跡
+  const maxValuesRef = useRef({
+    waveformMax: 0,
+    zoomedMax: 0,
+    spectrumMax: 0,
+    spectrogramMax: 0
+  });
+
+  const sampleRate = 44100; // 標準サンプルレート
 
   useEffect(() => {
     return () => {
@@ -44,7 +52,14 @@ export default function Music() {
     audioContextRef.current = audioContext;
     analyserRef.current = analyser;
     spectrogramDataRef.current = [];
-    maxSpectrumRef.current = 0;
+    
+    // 最大値をリセット
+    maxValuesRef.current = {
+      waveformMax: 0,
+      zoomedMax: 0,
+      spectrumMax: 0,
+      spectrogramMax: 0
+    };
   };
 
   const drawAllVisualizations = () => {
@@ -60,16 +75,12 @@ export default function Music() {
       analyser.getByteFrequencyData(frequencyData);
 
       // 最大値を更新
-      const currentMax = Math.max(...frequencyData);
-      if (currentMax > maxSpectrumRef.current) {
-        maxSpectrumRef.current = currentMax;
-        setMaxSpectrum(currentMax);
-      }
+      updateMaxValues(timeDomainData, frequencyData);
 
       drawWaveform(timeDomainData);
       drawZoomedWaveform(timeDomainData);
       drawSpectrogram(frequencyData);
-      drawSpectrum(frequencyData, maxSpectrumRef.current);
+      drawSpectrum(frequencyData);
 
       setCurrentTime(audioRef.current?.currentTime || 0);
     };
@@ -77,11 +88,36 @@ export default function Music() {
     draw();
   };
 
+  const updateMaxValues = (timeDomainData, frequencyData) => {
+    // 波形の最大振幅を計算
+    let waveMax = 0;
+    let zoomedMax = 0;
+    for (let i = 0; i < timeDomainData.length; i++) {
+      const amplitude = Math.abs((timeDomainData[i] - 128) / 128);
+      if (amplitude > waveMax) waveMax = amplitude;
+      if (i < 256 && amplitude > zoomedMax) zoomedMax = amplitude;
+    }
+    
+    // スペクトラムの最大値
+    let specMax = 0;
+    for (let i = 0; i < frequencyData.length; i++) {
+      if (frequencyData[i] > specMax) specMax = frequencyData[i];
+    }
+
+    // 最大値を更新（減衰しないように最大を保持）
+    const mv = maxValuesRef.current;
+    if (waveMax > mv.waveformMax) mv.waveformMax = waveMax;
+    if (zoomedMax > mv.zoomedMax) mv.zoomedMax = zoomedMax;
+    if (specMax > mv.spectrumMax) mv.spectrumMax = specMax;
+    if (specMax > mv.spectrogramMax) mv.spectrogramMax = specMax;
+  };
+
   // 1. 波形図（全体）
   const drawWaveform = (dataArray) => {
     const canvas = waveformCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const maxAmp = maxValuesRef.current.waveformMax || 1;
 
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -95,7 +131,8 @@ export default function Music() {
 
     for (let i = 0; i < dataArray.length; i++) {
       const v = (dataArray[i] - 128) / 128;
-      const y = (1 - v) * canvas.height / 2;
+      const normalizedV = v / maxAmp;
+      const y = (1 - normalizedV) * canvas.height / 2;
 
       if (i === 0) {
         ctx.moveTo(x, y);
@@ -106,19 +143,26 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル
+    // 軸ラベル（実際の最大値）
     ctx.fillStyle = '#000';
-    ctx.font = '10px sans-serif';
-    ctx.fillText('1.0', 2, 12);
-    ctx.fillText('0.0', 2, canvas.height / 2 + 4);
-    ctx.fillText('-1.0', 2, canvas.height - 4);
+    ctx.font = '10px monospace';
+    ctx.fillText(maxAmp.toFixed(2), 2, 12);
+    ctx.fillText('0.00', 2, canvas.height / 2 + 4);
+    ctx.fillText((-maxAmp).toFixed(2), 2, canvas.height - 4);
+    
+    // 時間軸
+    const timePerSample = 1 / sampleRate;
+    const totalTime = (dataArray.length * timePerSample).toFixed(2);
+    ctx.fillText('0', 30, canvas.height - 4);
+    ctx.fillText(`${totalTime}s`, canvas.width - 30, canvas.height - 4);
   };
 
-  // 2. 拡大波形（最初の部分）
+  // 2. 拡大波形
   const drawZoomedWaveform = (dataArray) => {
     const canvas = zoomedCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const maxAmp = maxValuesRef.current.zoomedMax || 1;
 
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -133,7 +177,8 @@ export default function Music() {
 
     for (let i = 0; i < zoomLength && i < dataArray.length; i++) {
       const v = (dataArray[i] - 128) / 128;
-      const y = (1 - v) * canvas.height / 2;
+      const normalizedV = v / maxAmp;
+      const y = (1 - normalizedV) * canvas.height / 2;
 
       if (i === 0) {
         ctx.moveTo(x, y);
@@ -144,11 +189,17 @@ export default function Music() {
     }
     ctx.stroke();
 
+    // 軸ラベル
     ctx.fillStyle = '#000';
-    ctx.font = '10px sans-serif';
-    ctx.fillText('0.6', 2, 20);
-    ctx.fillText('0.0', 2, canvas.height / 2 + 4);
-    ctx.fillText('-0.4', 2, canvas.height - 8);
+    ctx.font = '10px monospace';
+    ctx.fillText(maxAmp.toFixed(2), 2, 12);
+    ctx.fillText('0.00', 2, canvas.height / 2 + 4);
+    ctx.fillText((-maxAmp).toFixed(2), 2, canvas.height - 4);
+    
+    // 時間軸（拡大部分）
+    const zoomTime = (zoomLength / sampleRate * 1000).toFixed(1);
+    ctx.fillText('0', 30, canvas.height - 4);
+    ctx.fillText(`${zoomTime}ms`, canvas.width - 40, canvas.height - 4);
   };
 
   // 3. スペクトログラム
@@ -156,7 +207,9 @@ export default function Music() {
     const canvas = spectrogramCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const maxVal = maxValuesRef.current.spectrogramMax || 255;
 
+    // スペクトログラムデータを蓄積
     const column = new Uint8Array(frequencyData);
     spectrogramDataRef.current.push(column);
 
@@ -168,52 +221,57 @@ export default function Music() {
     ctx.fillStyle = '#1a0a2e';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const columnWidth = 1;
     const data = spectrogramDataRef.current;
+    const nyquist = sampleRate / 2;
 
     for (let x = 0; x < data.length; x++) {
       const col = data[x];
       for (let y = 0; y < col.length; y++) {
         const value = col[y];
-        const hue = 250 - (value / 255) * 200;
-        const lightness = 10 + (value / 255) * 50;
+        const normalizedValue = value / maxVal;
+        const hue = 250 - normalizedValue * 200;
+        const lightness = 10 + normalizedValue * 50;
         ctx.fillStyle = `hsl(${hue}, 100%, ${lightness}%)`;
         
         const yPos = canvas.height - (y / col.length) * canvas.height;
-        ctx.fillRect(x * columnWidth, yPos, columnWidth, canvas.height / col.length + 1);
+        ctx.fillRect(x, yPos, 1, canvas.height / col.length + 1);
       }
     }
 
+    // 軸ラベル（実際の周波数）
     ctx.fillStyle = '#fff';
-    ctx.font = '10px sans-serif';
-    ctx.fillText('8000', 2, 12);
-    ctx.fillText('4000', 2, canvas.height / 2);
+    ctx.font = '10px monospace';
+    ctx.fillText(`${(nyquist / 1000).toFixed(1)}kHz`, 2, 12);
+    ctx.fillText(`${(nyquist / 2000).toFixed(1)}kHz`, 2, canvas.height / 2);
     ctx.fillText('0 Hz', 2, canvas.height - 4);
   };
 
-  // 4. パワースペクトル密度（最大値に基づくスケール）
-  const drawSpectrum = (frequencyData, maxValue) => {
+  // 4. パワースペクトル密度
+  const drawSpectrum = (frequencyData) => {
     const canvas = spectrumCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    const maxVal = maxValuesRef.current.spectrumMax || 255;
+    
+    // dBに変換（analyserの設定に基づく）
+    const minDb = -90;
+    const maxDb = -10;
+    const dbRange = maxDb - minDb;
 
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    // 最大値が0の場合はデフォルト値を使用
-    const effectiveMax = maxValue > 0 ? maxValue : 255;
 
     ctx.lineWidth = 1;
     ctx.strokeStyle = '#1f77b4';
     ctx.beginPath();
 
     const barWidth = canvas.width / frequencyData.length;
+    const nyquist = sampleRate / 2;
 
     for (let i = 0; i < frequencyData.length; i++) {
       const value = frequencyData[i];
-      // 最大値に基づいて正規化
-      const percent = value / effectiveMax;
-      const y = canvas.height - percent * (canvas.height - 20);
+      const percent = value / maxVal;
+      const y = canvas.height - percent * canvas.height;
       const x = i * barWidth;
 
       if (i === 0) {
@@ -224,21 +282,17 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // dB値に変換（Web Audio APIの範囲: -90dB ~ -10dB）
-    const minDecibels = -90;
-    const maxDecibels = -10;
-    const dbRange = maxDecibels - minDecibels;
-    const maxDb = Math.round(minDecibels + (effectiveMax / 255) * dbRange);
-    const midDb = Math.round(minDecibels + (effectiveMax / 255) * dbRange * 0.5);
-
-    // 軸ラベル（実際の最大値に基づく）
+    // 軸ラベル（実際のdB値）
+    const actualMaxDb = minDb + (maxVal / 255) * dbRange;
     ctx.fillStyle = '#000';
-    ctx.font = '10px sans-serif';
-    ctx.fillText(`${maxDb} dB`, 2, 15);
-    ctx.fillText(`${midDb}`, 2, canvas.height / 2);
-    ctx.fillText(`${minDecibels}`, 2, canvas.height - 4);
-    ctx.fillText('0 Hz', 40, canvas.height - 4);
-    ctx.fillText('8000 Hz', canvas.width - 50, canvas.height - 4);
+    ctx.font = '10px monospace';
+    ctx.fillText(`${actualMaxDb.toFixed(0)} dB`, 2, 12);
+    ctx.fillText(`${(actualMaxDb / 2).toFixed(0)} dB`, 2, canvas.height / 2);
+    ctx.fillText(`${minDb} dB`, 2, canvas.height - 4);
+    
+    // 周波数軸
+    ctx.fillText('0', 35, canvas.height - 4);
+    ctx.fillText(`${(nyquist / 1000).toFixed(1)}kHz`, canvas.width - 45, canvas.height - 4);
   };
 
   const handlePlay = () => {
@@ -268,12 +322,6 @@ export default function Music() {
 
   const handleLoadedMetadata = () => {
     setDuration(audioRef.current.duration);
-  };
-
-  const handleReset = () => {
-    maxSpectrumRef.current = 0;
-    setMaxSpectrum(0);
-    spectrogramDataRef.current = [];
   };
 
   const formatTime = (time) => {
@@ -348,7 +396,7 @@ export default function Music() {
             />
 
             {/* 4. パワースペクトル密度 */}
-            <p style={labelStyle}>パワースペクトル密度（最大値: {maxSpectrum > 0 ? Math.round(-90 + (maxSpectrum / 255) * 80) : '--'} dB）</p>
+            <p style={labelStyle}>パワースペクトル密度（dB）</p>
             <canvas
               ref={spectrumCanvasRef}
               width={760}
@@ -383,19 +431,6 @@ export default function Music() {
                 }}
               >
                 {isPlaying ? '■ 停止' : '▶ 再生'}
-              </button>
-              <button
-                onClick={handleReset}
-                style={{
-                  padding: '8px 15px',
-                  fontSize: '14px',
-                  cursor: 'pointer',
-                  backgroundColor: '#fff',
-                  border: '1px solid #000',
-                  color: '#000'
-                }}
-              >
-                リセット
               </button>
               <span style={{ fontSize: '14px', fontFamily: 'monospace' }}>
                 {formatTime(currentTime)} / {formatTime(duration)}
