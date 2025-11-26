@@ -443,6 +443,11 @@ function TrackVisualizer({ title, credit, audioSrc }) {
 export default function Music() {
   const tracks = [
     {
+      title: 'テーマパークの音',
+      credit: 'Direction & Concept: Tsubasato',
+      audioSrc: '/music/youkin-elephant.mp3'
+    },
+    {
       title: '陽平のボイステクノポップ',
       credit: 'Direction & Concept: Tsubasato',
       audioSrc: '/music/youkin-voicemusic.wav'
