@@ -32,13 +32,14 @@ export default function Furniture() {
               border: '1px solid #ccc'
             }}
           />
-          <p style={{
-            marginTop: '15px',
-            fontSize: '18px',
-            fontWeight: 'bold'
-          }}>
-            cmf WATCH PRO 2
-          </p>
+            <p style={{
+  marginTop: '15px',
+  fontSize: '18px',
+  fontWeight: 300,
+  fontFamily: '"Bitcount Grid Single Ink", system-ui'
+}}>
+  cmf WATCH PRO 2
+</p>
           <p style={{
             fontSize: '14px',
             color: '#666',
@@ -254,12 +255,14 @@ export default function Furniture() {
               border: '1px solid #ccc'
             }}
           />
-          <p style={{
-            marginTop: '15px',
-            fontSize: '18px',
-            fontWeight: 'bold'
-          }}>
-            NOTHING ear(a)
+ <p style={{
+  marginTop: '15px',          
+  fontSize: '18px',          
+  fontWeight: 300,            
+  fontFamily: '"Bitcount Grid Single Ink", system-ui'
+}}>
+  NOTHING ear(a)
+</p>
           </p>
           <p style={{
             fontSize: '14px',
