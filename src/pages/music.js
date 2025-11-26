@@ -30,10 +30,12 @@ export default function Music() {
             padding: '20px',
             borderRadius: '8px'
           }}>
-            <audio controls style={{ width: '100%', marginBottom: '10px' }}>
-              <source src="/music/i-love-unchi.m4a" type="audio/mp4" />
-              お使いのブラウザは音声再生に対応していません。
-            </audio>
+
+　　　　　<audio controls style={{ width: '100%', marginBottom: '10px' }}>
+  <source src="/music/i-love-unchi.wav" type="audio/wav" />
+  お使いのブラウザは音声再生に対応していません。
+</audio>
+
           </div>
         </div>
       </article>
