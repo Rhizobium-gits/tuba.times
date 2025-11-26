@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 
-export default function Music() {
+// 個別トラックのビジュアライザーコンポーネント
+function TrackVisualizer({ title, credit, audioSrc }) {
   const waveformCanvasRef = useRef(null);
   const zoomedCanvasRef = useRef(null);
   const spectrogramCanvasRef = useRef(null);
@@ -14,7 +15,6 @@ export default function Music() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   
-  // 動的な最大値・周波数範囲を追跡
   const maxValuesRef = useRef({
     waveformMax: 0,
     zoomedMax: 0,
@@ -25,7 +25,7 @@ export default function Music() {
   });
 
   const sampleRateRef = useRef(44100);
-  const NOISE_THRESHOLD = 10; // ノイズフロアのしきい値
+  const NOISE_THRESHOLD = 10;
 
   useEffect(() => {
     return () => {
@@ -58,7 +58,6 @@ export default function Music() {
     analyserRef.current = analyser;
     spectrogramDataRef.current = [];
     
-    // 最大値をリセット
     maxValuesRef.current = {
       waveformMax: 0,
       zoomedMax: 0,
@@ -81,7 +80,6 @@ export default function Music() {
       analyser.getByteTimeDomainData(timeDomainData);
       analyser.getByteFrequencyData(frequencyData);
 
-      // 最大値と周波数範囲を更新
       updateMaxValues(timeDomainData, frequencyData);
 
       drawWaveform(timeDomainData);
@@ -98,7 +96,6 @@ export default function Music() {
   const updateMaxValues = (timeDomainData, frequencyData) => {
     const mv = maxValuesRef.current;
     
-    // 波形の最大振幅を計算
     let waveMax = 0;
     let zoomedMax = 0;
     for (let i = 0; i < timeDomainData.length; i++) {
@@ -107,33 +104,28 @@ export default function Music() {
       if (i < 256 && amplitude > zoomedMax) zoomedMax = amplitude;
     }
     
-    // スペクトラムの最大値と周波数範囲を検出
     let specMax = 0;
     for (let i = 0; i < frequencyData.length; i++) {
       const value = frequencyData[i];
       if (value > specMax) specMax = value;
       
-      // ノイズフロア以上の周波数ビンを検出
       if (value > NOISE_THRESHOLD) {
         if (i < mv.minFreqBin) mv.minFreqBin = i;
         if (i > mv.maxFreqBin) mv.maxFreqBin = i;
       }
     }
 
-    // 最大値を更新
     if (waveMax > mv.waveformMax) mv.waveformMax = waveMax;
     if (zoomedMax > mv.zoomedMax) mv.zoomedMax = zoomedMax;
     if (specMax > mv.spectrumMax) mv.spectrumMax = specMax;
     if (specMax > mv.spectrogramMax) mv.spectrogramMax = specMax;
   };
 
-  // ビン番号から周波数(Hz)に変換
   const binToFreq = (bin, totalBins) => {
     const nyquist = sampleRateRef.current / 2;
     return (bin / totalBins) * nyquist;
   };
 
-  // 周波数を読みやすい形式に変換
   const formatFreq = (hz) => {
     if (hz >= 1000) {
       return `${(hz / 1000).toFixed(1)}kHz`;
@@ -141,7 +133,6 @@ export default function Music() {
     return `${Math.round(hz)}Hz`;
   };
 
-  // 1. 波形図（全体）
   const drawWaveform = (dataArray) => {
     const canvas = waveformCanvasRef.current;
     if (!canvas) return;
@@ -172,7 +163,6 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル
     ctx.fillStyle = '#000';
     ctx.font = '10px monospace';
     ctx.fillText(maxAmp.toFixed(2), 2, 12);
@@ -180,7 +170,6 @@ export default function Music() {
     ctx.fillText((-maxAmp).toFixed(2), 2, canvas.height - 4);
   };
 
-  // 2. 拡大波形
   const drawZoomedWaveform = (dataArray) => {
     const canvas = zoomedCanvasRef.current;
     if (!canvas) return;
@@ -212,7 +201,6 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル
     ctx.fillStyle = '#000';
     ctx.font = '10px monospace';
     ctx.fillText(maxAmp.toFixed(2), 2, 12);
@@ -224,7 +212,6 @@ export default function Music() {
     ctx.fillText(`${zoomTime}ms`, canvas.width - 40, canvas.height - 4);
   };
 
-  // 3. スペクトログラム（動的周波数範囲）
   const drawSpectrogram = (frequencyData) => {
     const canvas = spectrogramCanvasRef.current;
     if (!canvas) return;
@@ -232,12 +219,9 @@ export default function Music() {
     const mv = maxValuesRef.current;
     const maxVal = mv.spectrogramMax || 255;
 
-    // 周波数範囲（マージンを追加）
     const minBin = Math.max(0, mv.minFreqBin - 5);
     const maxBin = Math.min(frequencyData.length - 1, mv.maxFreqBin + 5);
-    const binRange = maxBin - minBin || 1;
 
-    // スペクトログラムデータを蓄積（検出範囲のみ保存）
     const column = frequencyData.slice(minBin, maxBin + 1);
     spectrogramDataRef.current.push({
       data: new Uint8Array(column),
@@ -272,7 +256,6 @@ export default function Music() {
       }
     }
 
-    // 軸ラベル（実際の検出周波数範囲）
     const minFreq = binToFreq(minBin, frequencyData.length);
     const maxFreq = binToFreq(maxBin, frequencyData.length);
     const midFreq = (minFreq + maxFreq) / 2;
@@ -284,7 +267,6 @@ export default function Music() {
     ctx.fillText(formatFreq(minFreq), 2, canvas.height - 4);
   };
 
-  // 4. パワースペクトル密度（動的周波数範囲）
   const drawSpectrum = (frequencyData) => {
     const canvas = spectrumCanvasRef.current;
     if (!canvas) return;
@@ -292,12 +274,10 @@ export default function Music() {
     const mv = maxValuesRef.current;
     const maxVal = mv.spectrumMax || 255;
     
-    // 周波数範囲
     const minBin = Math.max(0, mv.minFreqBin - 5);
     const maxBin = Math.min(frequencyData.length - 1, mv.maxFreqBin + 5);
     const binRange = maxBin - minBin || 1;
 
-    // dB変換
     const minDb = -90;
     const maxDb = -10;
     const dbRange = maxDb - minDb;
@@ -325,7 +305,6 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル（実際のdB値）
     const actualMaxDb = minDb + (maxVal / 255) * dbRange;
     ctx.fillStyle = '#000';
     ctx.font = '10px monospace';
@@ -333,7 +312,6 @@ export default function Music() {
     ctx.fillText(`${((actualMaxDb + minDb) / 2).toFixed(0)}dB`, 2, canvas.height / 2);
     ctx.fillText(`${minDb}dB`, 2, canvas.height - 4);
     
-    // 周波数軸（検出範囲）
     const minFreq = binToFreq(minBin, frequencyData.length);
     const maxFreq = binToFreq(maxBin, frequencyData.length);
     ctx.fillText(formatFreq(minFreq), 35, canvas.height - 4);
@@ -388,6 +366,95 @@ export default function Music() {
   };
 
   return (
+    <div style={{ marginBottom: '40px' }}>
+      <h3 style={{ fontSize: '18px', marginBottom: '5px' }}>{title}</h3>
+      <p style={{ fontSize: '14px', color: '#666', marginBottom: '15px' }}>{credit}</p>
+      
+      <div style={{ border: '1px solid #000', padding: '15px' }}>
+        <p style={labelStyle}>波形図（全体）</p>
+        <canvas
+          ref={waveformCanvasRef}
+          width={760}
+          height={80}
+          style={canvasStyle}
+        />
+
+        <p style={labelStyle}>波形図（拡大）</p>
+        <canvas
+          ref={zoomedCanvasRef}
+          width={760}
+          height={80}
+          style={canvasStyle}
+        />
+
+        <p style={labelStyle}>スペクトログラム（検出周波数範囲）</p>
+        <canvas
+          ref={spectrogramCanvasRef}
+          width={760}
+          height={100}
+          style={canvasStyle}
+        />
+
+        <p style={labelStyle}>パワースペクトル密度（検出周波数範囲）</p>
+        <canvas
+          ref={spectrumCanvasRef}
+          width={760}
+          height={80}
+          style={canvasStyle}
+        />
+
+        <audio
+          ref={audioRef}
+          onEnded={handleEnded}
+          onLoadedMetadata={handleLoadedMetadata}
+          style={{ display: 'none' }}
+        >
+          <source src={audioSrc} type="audio/wav" />
+        </audio>
+
+        <div style={{ 
+          display: 'flex', 
+          alignItems: 'center', 
+          gap: '15px',
+          marginTop: '15px'
+        }}>
+          <button
+            onClick={isPlaying ? handlePause : handlePlay}
+            style={{
+              padding: '8px 20px',
+              fontSize: '14px',
+              cursor: 'pointer',
+              backgroundColor: '#fff',
+              border: '1px solid #000',
+              color: '#000'
+            }}
+          >
+            {isPlaying ? '■ 停止' : '▶ 再生'}
+          </button>
+          <span style={{ fontSize: '14px', fontFamily: 'monospace' }}>
+            {formatTime(currentTime)} / {formatTime(duration)}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Music() {
+  const tracks = [
+    {
+      title: 'I Love Unchi',
+      credit: 'composition: Jundai OKANO',
+      audioSrc: '/music/i-love-unchi.wav'
+    },
+    {
+      title: '陽平のボイステクノポップ',
+      credit: 'Direction & Concept: Tsubasato',
+      audioSrc: '/music/youkin-voicemusic.wav'
+    }
+  ];
+
+  return (
     <div style={{
       fontFamily: 'Tsubafont, Times New Roman, serif',
       maxWidth: '800px',
@@ -409,80 +476,15 @@ export default function Music() {
       
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <h2 style={{ fontSize: '20px', marginBottom: '20px' }}>プレイリスト</h2>
-        <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '15px' }}>I Love Unchi - composition: Jundai OKANO</h3>
-          
-          <div style={{ border: '1px solid #000', padding: '15px' }}>
-            {/* 1. 波形図 */}
-            <p style={labelStyle}>波形図（全体）</p>
-            <canvas
-              ref={waveformCanvasRef}
-              width={760}
-              height={80}
-              style={canvasStyle}
-            />
-
-            {/* 2. 拡大波形 */}
-            <p style={labelStyle}>波形図（拡大）</p>
-            <canvas
-              ref={zoomedCanvasRef}
-              width={760}
-              height={80}
-              style={canvasStyle}
-            />
-
-            {/* 3. スペクトログラム */}
-            <p style={labelStyle}>スペクトログラム（検出周波数範囲）</p>
-            <canvas
-              ref={spectrogramCanvasRef}
-              width={760}
-              height={100}
-              style={canvasStyle}
-            />
-
-            {/* 4. パワースペクトル密度 */}
-            <p style={labelStyle}>パワースペクトル密度（検出周波数範囲）</p>
-            <canvas
-              ref={spectrumCanvasRef}
-              width={760}
-              height={80}
-              style={canvasStyle}
-            />
-
-            <audio
-              ref={audioRef}
-              onEnded={handleEnded}
-              onLoadedMetadata={handleLoadedMetadata}
-              style={{ display: 'none' }}
-            >
-              <source src="/music/i-love-unchi.wav" type="audio/wav" />
-            </audio>
-
-            <div style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '15px',
-              marginTop: '15px'
-            }}>
-              <button
-                onClick={isPlaying ? handlePause : handlePlay}
-                style={{
-                  padding: '8px 20px',
-                  fontSize: '14px',
-                  cursor: 'pointer',
-                  backgroundColor: '#fff',
-                  border: '1px solid #000',
-                  color: '#000'
-                }}
-              >
-                {isPlaying ? '■ 停止' : '▶ 再生'}
-              </button>
-              <span style={{ fontSize: '14px', fontFamily: 'monospace' }}>
-                {formatTime(currentTime)} / {formatTime(duration)}
-              </span>
-            </div>
-          </div>
-        </div>
+        
+        {tracks.map((track, index) => (
+          <TrackVisualizer
+            key={index}
+            title={track.title}
+            credit={track.credit}
+            audioSrc={track.audioSrc}
+          />
+        ))}
       </article>
       
       <hr style={{ marginTop: '40px', border: '1px solid #000000' }} />
