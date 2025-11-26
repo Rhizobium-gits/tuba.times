@@ -152,7 +152,9 @@ export default function Seasons() {
         <p style={{ fontSize: '14px', color: '#666', fontStyle: 'italic' }}>
              撮影場所: 鶴岡タウンキャンパス研修棟
    　　 </p>
+       </div>
 
+<div style={{ marginBottom: '30px' }}>
         <img
             src="/images/season-202409.jpg"
             alt="2025年9月の景色2"
