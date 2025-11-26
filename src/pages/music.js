@@ -14,15 +14,18 @@ export default function Music() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   
-  // 動的な最大値を追跡
+  // 動的な最大値・周波数範囲を追跡
   const maxValuesRef = useRef({
     waveformMax: 0,
     zoomedMax: 0,
     spectrumMax: 0,
-    spectrogramMax: 0
+    spectrogramMax: 0,
+    minFreqBin: Infinity,
+    maxFreqBin: 0
   });
 
-  const sampleRate = 44100; // 標準サンプルレート
+  const sampleRateRef = useRef(44100);
+  const NOISE_THRESHOLD = 10; // ノイズフロアのしきい値
 
   useEffect(() => {
     return () => {
@@ -39,6 +42,8 @@ export default function Music() {
     if (audioContextRef.current) return;
 
     const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    sampleRateRef.current = audioContext.sampleRate;
+    
     const analyser = audioContext.createAnalyser();
     analyser.fftSize = 2048;
     analyser.smoothingTimeConstant = 0.8;
@@ -58,7 +63,9 @@ export default function Music() {
       waveformMax: 0,
       zoomedMax: 0,
       spectrumMax: 0,
-      spectrogramMax: 0
+      spectrogramMax: 0,
+      minFreqBin: Infinity,
+      maxFreqBin: 0
     };
   };
 
@@ -74,7 +81,7 @@ export default function Music() {
       analyser.getByteTimeDomainData(timeDomainData);
       analyser.getByteFrequencyData(frequencyData);
 
-      // 最大値を更新
+      // 最大値と周波数範囲を更新
       updateMaxValues(timeDomainData, frequencyData);
 
       drawWaveform(timeDomainData);
@@ -89,6 +96,8 @@ export default function Music() {
   };
 
   const updateMaxValues = (timeDomainData, frequencyData) => {
+    const mv = maxValuesRef.current;
+    
     // 波形の最大振幅を計算
     let waveMax = 0;
     let zoomedMax = 0;
@@ -98,18 +107,38 @@ export default function Music() {
       if (i < 256 && amplitude > zoomedMax) zoomedMax = amplitude;
     }
     
-    // スペクトラムの最大値
+    // スペクトラムの最大値と周波数範囲を検出
     let specMax = 0;
     for (let i = 0; i < frequencyData.length; i++) {
-      if (frequencyData[i] > specMax) specMax = frequencyData[i];
+      const value = frequencyData[i];
+      if (value > specMax) specMax = value;
+      
+      // ノイズフロア以上の周波数ビンを検出
+      if (value > NOISE_THRESHOLD) {
+        if (i < mv.minFreqBin) mv.minFreqBin = i;
+        if (i > mv.maxFreqBin) mv.maxFreqBin = i;
+      }
     }
 
-    // 最大値を更新（減衰しないように最大を保持）
-    const mv = maxValuesRef.current;
+    // 最大値を更新
     if (waveMax > mv.waveformMax) mv.waveformMax = waveMax;
     if (zoomedMax > mv.zoomedMax) mv.zoomedMax = zoomedMax;
     if (specMax > mv.spectrumMax) mv.spectrumMax = specMax;
     if (specMax > mv.spectrogramMax) mv.spectrogramMax = specMax;
+  };
+
+  // ビン番号から周波数(Hz)に変換
+  const binToFreq = (bin, totalBins) => {
+    const nyquist = sampleRateRef.current / 2;
+    return (bin / totalBins) * nyquist;
+  };
+
+  // 周波数を読みやすい形式に変換
+  const formatFreq = (hz) => {
+    if (hz >= 1000) {
+      return `${(hz / 1000).toFixed(1)}kHz`;
+    }
+    return `${Math.round(hz)}Hz`;
   };
 
   // 1. 波形図（全体）
@@ -143,18 +172,12 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル（実際の最大値）
+    // 軸ラベル
     ctx.fillStyle = '#000';
     ctx.font = '10px monospace';
     ctx.fillText(maxAmp.toFixed(2), 2, 12);
     ctx.fillText('0.00', 2, canvas.height / 2 + 4);
     ctx.fillText((-maxAmp).toFixed(2), 2, canvas.height - 4);
-    
-    // 時間軸
-    const timePerSample = 1 / sampleRate;
-    const totalTime = (dataArray.length * timePerSample).toFixed(2);
-    ctx.fillText('0', 30, canvas.height - 4);
-    ctx.fillText(`${totalTime}s`, canvas.width - 30, canvas.height - 4);
   };
 
   // 2. 拡大波形
@@ -196,22 +219,31 @@ export default function Music() {
     ctx.fillText('0.00', 2, canvas.height / 2 + 4);
     ctx.fillText((-maxAmp).toFixed(2), 2, canvas.height - 4);
     
-    // 時間軸（拡大部分）
-    const zoomTime = (zoomLength / sampleRate * 1000).toFixed(1);
+    const zoomTime = (zoomLength / sampleRateRef.current * 1000).toFixed(1);
     ctx.fillText('0', 30, canvas.height - 4);
     ctx.fillText(`${zoomTime}ms`, canvas.width - 40, canvas.height - 4);
   };
 
-  // 3. スペクトログラム
+  // 3. スペクトログラム（動的周波数範囲）
   const drawSpectrogram = (frequencyData) => {
     const canvas = spectrogramCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const maxVal = maxValuesRef.current.spectrogramMax || 255;
+    const mv = maxValuesRef.current;
+    const maxVal = mv.spectrogramMax || 255;
 
-    // スペクトログラムデータを蓄積
-    const column = new Uint8Array(frequencyData);
-    spectrogramDataRef.current.push(column);
+    // 周波数範囲（マージンを追加）
+    const minBin = Math.max(0, mv.minFreqBin - 5);
+    const maxBin = Math.min(frequencyData.length - 1, mv.maxFreqBin + 5);
+    const binRange = maxBin - minBin || 1;
+
+    // スペクトログラムデータを蓄積（検出範囲のみ保存）
+    const column = frequencyData.slice(minBin, maxBin + 1);
+    spectrogramDataRef.current.push({
+      data: new Uint8Array(column),
+      minBin,
+      maxBin
+    });
 
     const maxColumns = canvas.width;
     if (spectrogramDataRef.current.length > maxColumns) {
@@ -221,39 +253,51 @@ export default function Music() {
     ctx.fillStyle = '#1a0a2e';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    const data = spectrogramDataRef.current;
-    const nyquist = sampleRate / 2;
+    const dataArr = spectrogramDataRef.current;
 
-    for (let x = 0; x < data.length; x++) {
-      const col = data[x];
-      for (let y = 0; y < col.length; y++) {
-        const value = col[y];
+    for (let x = 0; x < dataArr.length; x++) {
+      const col = dataArr[x];
+      const colData = col.data;
+      
+      for (let y = 0; y < colData.length; y++) {
+        const value = colData[y];
         const normalizedValue = value / maxVal;
         const hue = 250 - normalizedValue * 200;
         const lightness = 10 + normalizedValue * 50;
         ctx.fillStyle = `hsl(${hue}, 100%, ${lightness}%)`;
         
-        const yPos = canvas.height - (y / col.length) * canvas.height;
-        ctx.fillRect(x, yPos, 1, canvas.height / col.length + 1);
+        const yPos = canvas.height - ((y + 1) / colData.length) * canvas.height;
+        const height = canvas.height / colData.length + 1;
+        ctx.fillRect(x, yPos, 1, height);
       }
     }
 
-    // 軸ラベル（実際の周波数）
+    // 軸ラベル（実際の検出周波数範囲）
+    const minFreq = binToFreq(minBin, frequencyData.length);
+    const maxFreq = binToFreq(maxBin, frequencyData.length);
+    const midFreq = (minFreq + maxFreq) / 2;
+
     ctx.fillStyle = '#fff';
     ctx.font = '10px monospace';
-    ctx.fillText(`${(nyquist / 1000).toFixed(1)}kHz`, 2, 12);
-    ctx.fillText(`${(nyquist / 2000).toFixed(1)}kHz`, 2, canvas.height / 2);
-    ctx.fillText('0 Hz', 2, canvas.height - 4);
+    ctx.fillText(formatFreq(maxFreq), 2, 12);
+    ctx.fillText(formatFreq(midFreq), 2, canvas.height / 2);
+    ctx.fillText(formatFreq(minFreq), 2, canvas.height - 4);
   };
 
-  // 4. パワースペクトル密度
+  // 4. パワースペクトル密度（動的周波数範囲）
   const drawSpectrum = (frequencyData) => {
     const canvas = spectrumCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    const maxVal = maxValuesRef.current.spectrumMax || 255;
+    const mv = maxValuesRef.current;
+    const maxVal = mv.spectrumMax || 255;
     
-    // dBに変換（analyserの設定に基づく）
+    // 周波数範囲
+    const minBin = Math.max(0, mv.minFreqBin - 5);
+    const maxBin = Math.min(frequencyData.length - 1, mv.maxFreqBin + 5);
+    const binRange = maxBin - minBin || 1;
+
+    // dB変換
     const minDb = -90;
     const maxDb = -10;
     const dbRange = maxDb - minDb;
@@ -265,16 +309,15 @@ export default function Music() {
     ctx.strokeStyle = '#1f77b4';
     ctx.beginPath();
 
-    const barWidth = canvas.width / frequencyData.length;
-    const nyquist = sampleRate / 2;
+    const barWidth = canvas.width / binRange;
 
-    for (let i = 0; i < frequencyData.length; i++) {
+    for (let i = minBin; i <= maxBin; i++) {
       const value = frequencyData[i];
       const percent = value / maxVal;
       const y = canvas.height - percent * canvas.height;
-      const x = i * barWidth;
+      const x = (i - minBin) * barWidth;
 
-      if (i === 0) {
+      if (i === minBin) {
         ctx.moveTo(x, y);
       } else {
         ctx.lineTo(x, y);
@@ -286,13 +329,15 @@ export default function Music() {
     const actualMaxDb = minDb + (maxVal / 255) * dbRange;
     ctx.fillStyle = '#000';
     ctx.font = '10px monospace';
-    ctx.fillText(`${actualMaxDb.toFixed(0)} dB`, 2, 12);
-    ctx.fillText(`${(actualMaxDb / 2).toFixed(0)} dB`, 2, canvas.height / 2);
-    ctx.fillText(`${minDb} dB`, 2, canvas.height - 4);
+    ctx.fillText(`${actualMaxDb.toFixed(0)}dB`, 2, 12);
+    ctx.fillText(`${((actualMaxDb + minDb) / 2).toFixed(0)}dB`, 2, canvas.height / 2);
+    ctx.fillText(`${minDb}dB`, 2, canvas.height - 4);
     
-    // 周波数軸
-    ctx.fillText('0', 35, canvas.height - 4);
-    ctx.fillText(`${(nyquist / 1000).toFixed(1)}kHz`, canvas.width - 45, canvas.height - 4);
+    // 周波数軸（検出範囲）
+    const minFreq = binToFreq(minBin, frequencyData.length);
+    const maxFreq = binToFreq(maxBin, frequencyData.length);
+    ctx.fillText(formatFreq(minFreq), 35, canvas.height - 4);
+    ctx.fillText(formatFreq(maxFreq), canvas.width - 50, canvas.height - 4);
   };
 
   const handlePlay = () => {
@@ -387,7 +432,7 @@ export default function Music() {
             />
 
             {/* 3. スペクトログラム */}
-            <p style={labelStyle}>スペクトログラム</p>
+            <p style={labelStyle}>スペクトログラム（検出周波数範囲）</p>
             <canvas
               ref={spectrogramCanvasRef}
               width={760}
@@ -396,7 +441,7 @@ export default function Music() {
             />
 
             {/* 4. パワースペクトル密度 */}
-            <p style={labelStyle}>パワースペクトル密度（dB）</p>
+            <p style={labelStyle}>パワースペクトル密度（検出周波数範囲）</p>
             <canvas
               ref={spectrumCanvasRef}
               width={760}
