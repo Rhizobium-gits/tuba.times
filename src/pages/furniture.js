@@ -263,7 +263,6 @@ export default function Furniture() {
 }}>
   NOTHING ear(a)
 </p>
-          </p>
           <p style={{
             fontSize: '14px',
             color: '#666',
