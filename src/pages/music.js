@@ -10,9 +10,11 @@ export default function Music() {
   const analyserRef = useRef(null);
   const audioContextRef = useRef(null);
   const spectrogramDataRef = useRef([]);
+  const maxSpectrumRef = useRef(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [maxSpectrum, setMaxSpectrum] = useState(0);
 
   useEffect(() => {
     return () => {
@@ -32,6 +34,8 @@ export default function Music() {
     const analyser = audioContext.createAnalyser();
     analyser.fftSize = 2048;
     analyser.smoothingTimeConstant = 0.8;
+    analyser.minDecibels = -90;
+    analyser.maxDecibels = -10;
     
     const source = audioContext.createMediaElementSource(audioRef.current);
     source.connect(analyser);
@@ -40,6 +44,7 @@ export default function Music() {
     audioContextRef.current = audioContext;
     analyserRef.current = analyser;
     spectrogramDataRef.current = [];
+    maxSpectrumRef.current = 0;
   };
 
   const drawAllVisualizations = () => {
@@ -54,10 +59,17 @@ export default function Music() {
       analyser.getByteTimeDomainData(timeDomainData);
       analyser.getByteFrequencyData(frequencyData);
 
+      // 最大値を更新
+      const currentMax = Math.max(...frequencyData);
+      if (currentMax > maxSpectrumRef.current) {
+        maxSpectrumRef.current = currentMax;
+        setMaxSpectrum(currentMax);
+      }
+
       drawWaveform(timeDomainData);
       drawZoomedWaveform(timeDomainData);
       drawSpectrogram(frequencyData);
-      drawSpectrum(frequencyData);
+      drawSpectrum(frequencyData, maxSpectrumRef.current);
 
       setCurrentTime(audioRef.current?.currentTime || 0);
     };
@@ -115,7 +127,6 @@ export default function Music() {
     ctx.strokeStyle = '#1f77b4';
     ctx.beginPath();
 
-    // 最初の256サンプルのみを拡大表示
     const zoomLength = 256;
     const sliceWidth = canvas.width / zoomLength;
     let x = 0;
@@ -133,7 +144,6 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル
     ctx.fillStyle = '#000';
     ctx.font = '10px sans-serif';
     ctx.fillText('0.6', 2, 20);
@@ -147,17 +157,14 @@ export default function Music() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
-    // スペクトログラムデータを蓄積
     const column = new Uint8Array(frequencyData);
     spectrogramDataRef.current.push(column);
 
-    // 最大幅を超えたら古いデータを削除
     const maxColumns = canvas.width;
     if (spectrogramDataRef.current.length > maxColumns) {
       spectrogramDataRef.current.shift();
     }
 
-    // 描画
     ctx.fillStyle = '#1a0a2e';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -177,7 +184,6 @@ export default function Music() {
       }
     }
 
-    // 軸ラベル
     ctx.fillStyle = '#fff';
     ctx.font = '10px sans-serif';
     ctx.fillText('8000', 2, 12);
@@ -185,14 +191,17 @@ export default function Music() {
     ctx.fillText('0 Hz', 2, canvas.height - 4);
   };
 
-  // 4. パワースペクトル密度
-  const drawSpectrum = (frequencyData) => {
+  // 4. パワースペクトル密度（最大値に基づくスケール）
+  const drawSpectrum = (frequencyData, maxValue) => {
     const canvas = spectrumCanvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
 
     ctx.fillStyle = '#ffffff';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 最大値が0の場合はデフォルト値を使用
+    const effectiveMax = maxValue > 0 ? maxValue : 255;
 
     ctx.lineWidth = 1;
     ctx.strokeStyle = '#1f77b4';
@@ -202,8 +211,9 @@ export default function Music() {
 
     for (let i = 0; i < frequencyData.length; i++) {
       const value = frequencyData[i];
-      const percent = value / 255;
-      const y = canvas.height - percent * canvas.height;
+      // 最大値に基づいて正規化
+      const percent = value / effectiveMax;
+      const y = canvas.height - percent * (canvas.height - 20);
       const x = i * barWidth;
 
       if (i === 0) {
@@ -214,13 +224,20 @@ export default function Music() {
     }
     ctx.stroke();
 
-    // 軸ラベル
+    // dB値に変換（Web Audio APIの範囲: -90dB ~ -10dB）
+    const minDecibels = -90;
+    const maxDecibels = -10;
+    const dbRange = maxDecibels - minDecibels;
+    const maxDb = Math.round(minDecibels + (effectiveMax / 255) * dbRange);
+    const midDb = Math.round(minDecibels + (effectiveMax / 255) * dbRange * 0.5);
+
+    // 軸ラベル（実際の最大値に基づく）
     ctx.fillStyle = '#000';
     ctx.font = '10px sans-serif';
-    ctx.fillText('150 dB', 2, 15);
-    ctx.fillText('100', 2, canvas.height / 3);
-    ctx.fillText('0', 2, canvas.height - 4);
-    ctx.fillText('0 Hz', 4, canvas.height - 15);
+    ctx.fillText(`${maxDb} dB`, 2, 15);
+    ctx.fillText(`${midDb}`, 2, canvas.height / 2);
+    ctx.fillText(`${minDecibels}`, 2, canvas.height - 4);
+    ctx.fillText('0 Hz', 40, canvas.height - 4);
     ctx.fillText('8000 Hz', canvas.width - 50, canvas.height - 4);
   };
 
@@ -251,6 +268,12 @@ export default function Music() {
 
   const handleLoadedMetadata = () => {
     setDuration(audioRef.current.duration);
+  };
+
+  const handleReset = () => {
+    maxSpectrumRef.current = 0;
+    setMaxSpectrum(0);
+    spectrogramDataRef.current = [];
   };
 
   const formatTime = (time) => {
@@ -325,7 +348,7 @@ export default function Music() {
             />
 
             {/* 4. パワースペクトル密度 */}
-            <p style={labelStyle}>パワースペクトル密度</p>
+            <p style={labelStyle}>パワースペクトル密度（最大値: {maxSpectrum > 0 ? Math.round(-90 + (maxSpectrum / 255) * 80) : '--'} dB）</p>
             <canvas
               ref={spectrumCanvasRef}
               width={760}
@@ -360,6 +383,19 @@ export default function Music() {
                 }}
               >
                 {isPlaying ? '■ 停止' : '▶ 再生'}
+              </button>
+              <button
+                onClick={handleReset}
+                style={{
+                  padding: '8px 15px',
+                  fontSize: '14px',
+                  cursor: 'pointer',
+                  backgroundColor: '#fff',
+                  border: '1px solid #000',
+                  color: '#000'
+                }}
+              >
+                リセット
               </button>
               <span style={{ fontSize: '14px', fontFamily: 'monospace' }}>
                 {formatTime(currentTime)} / {formatTime(duration)}
