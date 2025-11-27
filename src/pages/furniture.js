@@ -19,7 +19,44 @@ export default function Furniture() {
       <nav style={{ marginTop: '20px', marginBottom: '30px' }}>
         <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>
       </nav>
-      
+   
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget9.jpg"
+            alt="OIMU DB20-12-0783"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            OIMU DB20-12-0783
+          </p>
+          <p style={{
+            fontSize: '14px',   
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月27日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}> 
+            友人の韓国土産のお香．結構いい匂いがする．ただ，お香を刺すやつとマッチを持っていないのが寂しいところ．
+          </p>
+        </div>
+      </article>
+   
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
           <img
