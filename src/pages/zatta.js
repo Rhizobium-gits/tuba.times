@@ -1,183 +1,122 @@
+import { useState } from 'react';
+
 export default function Zatta() {
-  const attachments = [
-    {
-      title: '再現性の高い弁当 2025-12-01',
-      file: '/pdf/bento_recipe_recipeml.pdf',
-      description: 'RecipeML形式のお弁当レシピ',
-      date: '2025-12-01',
-      type: 'PDF'
-    },
-    // 他の添付資料をここに追加できます
-    // {
-    //   title: 'タイトル',
-    //   file: '/path/to/file',
-    //   description: '説明',
-    //   date: 'YYYY-MM-DD',
-    //   type: 'PDF' or 'Link' or 'Image'
-    // },
-  ];
+  const [memos, setMemos] = useState([]);
+  const [input, setInput] = useState('');
+
+  const addMemo = () => {
+    if (input.trim()) {
+      setMemos([...memos, { text: input, date: new Date().toLocaleDateString('ja-JP') }]);
+      setInput('');
+    }
+  };
+
+  const deleteMemo = (index) => {
+    setMemos(memos.filter((_, i) => i !== index));
+  };
 
   return (
     <div style={{ 
       fontFamily: 'Tsubafont, Times New Roman, serif',
-      maxWidth: '800px',
-      margin: '20px auto',
-      padding: '20px',
-      backgroundColor: '#fffef5',
-      minHeight: '100vh'
+      maxWidth: '700px',
+      margin: '40px auto',
+      padding: '20px'
     }}>
-      {/* ノートの穴 */}
-      <div style={{
-        position: 'absolute',
-        left: '40px',
-        top: '100px',
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '60px'
-      }}>
-        {[...Array(8)].map((_, i) => (
-          <div key={i} style={{
-            width: '12px',
-            height: '12px',
-            borderRadius: '50%',
-            backgroundColor: '#e0e0e0',
-            border: '1px solid #ccc'
-          }} />
-        ))}
-      </div>
+      <h1 style={{ fontSize: '24px', marginBottom: '8px' }}>雑多</h1>
+      <a href="/" style={{ color: '#0000EE', fontSize: '14px' }}>← 戻る</a>
 
-      <div style={{ marginLeft: '40px' }}>
-        <h1 style={{ 
-          fontSize: '28px',
-          fontWeight: 'normal',
-          borderBottom: '1px solid #333',
-          paddingBottom: '10px',
-          marginBottom: '10px'
-        }}>
-          雑多
-        </h1>
-        
-        <p style={{ 
-          fontSize: '12px', 
-          color: '#666',
-          marginBottom: '30px',
-          fontStyle: 'italic'
-        }}>
-          添付資料・メモ・その他
-        </p>
+      {/* 添付ファイル */}
+      <section style={{ marginTop: '40px' }}>
+        <h2 style={{ fontSize: '16px', marginBottom: '16px' }}>添付</h2>
+        <a 
+          href="/pdf/bento_recipe_recipeml.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            padding: '10px 16px',
+            border: '1px solid #000',
+            color: '#000',
+            textDecoration: 'none',
+            fontSize: '14px'
+          }}
+        >
+          再現性の高い弁当 2025-12-01.pdf
+        </a>
+      </section>
 
-        <nav style={{ marginBottom: '40px' }}>
-          <a href="/" style={{ 
-            color: '#0000EE', 
-            fontSize: '14px',
-            textDecoration: 'none'
-          }}>
-            ← ホームに戻る
-          </a>
-        </nav>
-
-        {/* 罫線付きコンテンツエリア */}
-        <div style={{
-          background: 'repeating-linear-gradient(transparent, transparent 27px, #e8e8e8 28px)',
-          paddingTop: '10px'
-        }}>
-          <h2 style={{ 
-            fontSize: '16px', 
-            fontWeight: 'normal',
-            marginBottom: '20px',
-            color: '#333'
-          }}>
-            📎 添付ファイル
-          </h2>
-
-          <ul style={{ 
-            listStyle: 'none', 
-            padding: 0,
-            margin: 0
-          }}>
-            {attachments.map((item, index) => (
-              <li key={index} style={{ 
-                marginBottom: '24px',
-                paddingBottom: '16px',
-                borderBottom: '1px dashed #ccc'
-              }}>
-                <a 
-                  href={item.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-block',
-                    color: '#0000EE',
-                    textDecoration: 'none',
-                    fontSize: '15px',
-                    padding: '8px 12px',
-                    border: '1px solid #ccc',
-                    borderRadius: '4px',
-                    backgroundColor: '#fff',
-                    transition: 'background-color 0.2s'
-                  }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = '#f0f0f0'}
-                  onMouseOut={(e) => e.target.style.backgroundColor = '#fff'}
-                >
-                  📄 {item.title}
-                </a>
-                {item.description && (
-                  <p style={{ 
-                    fontSize: '12px', 
-                    color: '#666',
-                    marginTop: '8px',
-                    marginLeft: '12px'
-                  }}>
-                    {item.description}
-                  </p>
-                )}
-                <span style={{ 
-                  fontSize: '11px', 
-                  color: '#999',
-                  marginLeft: '12px'
-                }}>
-                  [{item.type}] {item.date}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          {/* メモエリア */}
-          <div style={{ marginTop: '40px' }}>
-            <h2 style={{ 
-              fontSize: '16px', 
-              fontWeight: 'normal',
-              marginBottom: '20px',
-              color: '#333'
-            }}>
-              📝 メモ
-            </h2>
-            <p style={{ 
-              fontSize: '13px', 
-              color: '#888',
-              fontStyle: 'italic',
-              lineHeight: '28px'
-            }}>
-              ここに何か書く予定...
-            </p>
-          </div>
+      {/* メモ入力 */}
+      <section style={{ marginTop: '50px' }}>
+        <h2 style={{ fontSize: '16px', marginBottom: '16px' }}>メモ</h2>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && addMemo()}
+            placeholder="何か書く..."
+            style={{
+              flex: 1,
+              padding: '10px',
+              border: '1px solid #ccc',
+              fontFamily: 'inherit',
+              fontSize: '14px'
+            }}
+          />
+          <button
+            onClick={addMemo}
+            style={{
+              padding: '10px 20px',
+              border: '1px solid #000',
+              background: '#fff',
+              cursor: 'pointer',
+              fontFamily: 'inherit'
+            }}
+          >
+            追加
+          </button>
         </div>
 
-        <hr style={{ 
-          marginTop: '60px', 
-          border: 'none',
-          borderTop: '1px solid #ccc' 
-        }} />
-        
-        <p style={{ 
-          fontSize: '11px', 
-          textAlign: 'right', 
-          marginTop: '15px',
-          color: '#999'
-        }}>
-          Last updated: {new Date().toLocaleDateString('ja-JP')}
-        </p>
-      </div>
+        {/* メモ一覧 */}
+        <ul style={{ listStyle: 'none', padding: 0, marginTop: '20px' }}>
+          {memos.map((memo, i) => (
+            <li 
+              key={i} 
+              style={{ 
+                padding: '12px',
+                borderBottom: '1px solid #eee',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center'
+              }}
+            >
+              <div>
+                <span style={{ fontSize: '14px' }}>{memo.text}</span>
+                <span style={{ fontSize: '11px', color: '#999', marginLeft: '12px' }}>
+                  {memo.date}
+                </span>
+              </div>
+              <button
+                onClick={() => deleteMemo(i)}
+                style={{
+                  border: 'none',
+                  background: 'none',
+                  cursor: 'pointer',
+                  color: '#999',
+                  fontSize: '16px'
+                }}
+              >
+                ×
+              </button>
+            </li>
+          ))}
+        </ul>
+        {memos.length === 0 && (
+          <p style={{ color: '#999', fontSize: '13px', marginTop: '16px' }}>
+            メモはまだありません
+          </p>
+        )}
+      </section>
     </div>
   );
 }
