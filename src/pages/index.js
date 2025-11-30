@@ -39,6 +39,23 @@ export default function Home() {
           東京科学大学（旧東京医科歯科大学) 難治疾患研究所 計算システム生物学分野 (PI: 島村徹平)
         </p>
       </div>
+
+      <h2 style={{ fontSize: '20px', marginTop: '30px' }}>自己紹介</h2>
+      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+　　　  パソコン周りをいじるのと音楽が好きです．これは研究とは全く別です．ただ好きって言うだけです．中国にインターンに行ったのを機に3Dモデリングができるようになりました．
+      </p>
+      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+　　　　<a href="https://www.youtube.com/@RyuichiSakamotoArchive" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">坂本龍一</a>，<a href="https://www.youtube.com/channel/UCeMhZbWtGvULvXgEspzzfKA" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Goldmund</a>，<a href="https://www.youtube.com/@sakanactionchannel" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">サカナクション</a>，<a href="https://www.youtube.com/@ZUTOMAYO" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">ずっと真夜中でいいのに。</a>をよく聞きます．ジャズも聞きます．
+      </p>
+      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+        シンプルかつモダンなものが好きで，<a href="https://nothing.tech" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Nothing</a>にハマっています．
+      </p>
+      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+        暇な時間は<a href="https://www.youtube.com/@tsuukin-times" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">通勤タイムズの企画</a>と<a href="https://www.youtube.com/playlist?list=PLDxonNcxMgrtONxErEWf2ZUlVJAoqDh9R" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Weekly Ochiai</a>をよく見ます．
+      </p>
+      <p style={{ lineHeight: '1.8' }}>
+        この2つをよく見ている大学生はかなり多いように感じます．
+      </p>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>研究</h2>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
