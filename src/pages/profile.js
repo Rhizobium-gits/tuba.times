@@ -41,6 +41,7 @@ export default function Profile() {
       <ul style={{ lineHeight: '1.8' }}>
         <li>日本分子生物学会(MBSJ) (25-)</li>
         <li>腸内細菌学会(IMS) (25-)</li>
+        <li>日本宇宙生物科学会(JSBSS) (25-)</li>
       </ul>
 
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>経歴</h2>

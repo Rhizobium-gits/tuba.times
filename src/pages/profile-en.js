@@ -41,6 +41,7 @@ export default function ProfileEn() {
       <ul style={{ lineHeight: '1.8' }}>
         <li>Member of The Molecular Biology Society of Japan (MBSJ)(25-)</li>
         <li>Member of The Intestinal Microbiology Society (IMS)(25-)</li>
+        <li>Member of The Japanese Society for Biological Sciences in Space (JSBSS)(25-)</li>
       </ul>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>Career</h2>
