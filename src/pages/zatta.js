@@ -44,8 +44,9 @@ export default function Zatta() {
           再現性の高い弁当 2025-12-01.pdf
         </a>
 
-<a
-          href="/ images/desk1.jpg"
+
+        <a
+          href="/images/desk1.jpg"
           target="_blank"
           rel="noopener noreferrer"
           style={{
