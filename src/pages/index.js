@@ -41,10 +41,10 @@ export default function Home() {
       </div>
 
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>自己紹介</h2>
-      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+　　　<p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
 　　　  パソコン周りをいじるのと音楽が好きです．これは研究とは全く別です．ただ好きって言うだけです．中国にインターンに行ったのを機に3Dモデリングができるようになりました．
       </p>
-      <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
+　　　<p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
 　　　　<a href="https://www.youtube.com/@RyuichiSakamotoArchive" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">坂本龍一</a>，<a href="https://www.youtube.com/channel/UCeMhZbWtGvULvXgEspzzfKA" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Goldmund</a>，<a href="https://www.youtube.com/@sakanactionchannel" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">サカナクション</a>，<a href="https://www.youtube.com/@ZUTOMAYO" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">ずっと真夜中でいいのに。</a>をよく聞きます．ジャズも聞きます．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
