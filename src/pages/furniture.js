@@ -24,7 +24,7 @@ export default function Furniture() {
   <div style={{ textAlign: 'center' }}>
     <img
       src="/images/gadget10.jpg"
-      alt="自作線香立て1"
+      alt="自作線香立て"
       style={{
         width: '100%',
         maxWidth: '400px',
@@ -37,7 +37,7 @@ export default function Furniture() {
       fontSize: '18px',   
       fontWeight: 'bold'
     }}>
-      自作線香立て1
+      自作線香立て
     </p>
     <p style={{
       fontSize: '14px',
@@ -52,7 +52,7 @@ export default function Furniture() {
       textAlign: 'left',
       marginTop: '15px'   
     }}>
-      友人の韓国土産のお香のためにBlenderで作成．土台は百均で買った灰皿．素材はPLAで土台にガムテープで固定．線香が短くなっても，筒の中で不完全燃焼しないように穴が空いているのが唯一の工夫点．Flash Forge Guider2sで印刷．サイズは底面が直径3.7-4.0くらいにすれば良い(あとで詳しいサイズを確認します)．
+      友人の韓国土産のお香のためにBlenderで作成．
     </p>
     
       href="/stl/sennkoutate.stl"
@@ -69,7 +69,7 @@ export default function Furniture() {
         fontWeight: 'bold'
       }}
     >
-      .stlデータを取得
+      {'.stlデータを取得'}
     </a>
   </div>
 </article>
