@@ -54,7 +54,7 @@ export default function Furniture() {
     }}>
       友人の韓国土産のお香のためにBlenderで作成．
     </p>
-    
+    <a
       href="/stl/sennkoutate.stl"
       download="sennkoutate.stl"
       style={{
