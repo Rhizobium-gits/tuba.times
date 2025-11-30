@@ -77,7 +77,7 @@ export default function Furniture() {
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
           <img
-            src="/images/gadget12.jpg"
+            src="/images/gadget11.jpg"
             alt="東亜のリボンマッチ"
             style={{
               width: '100%',
@@ -189,7 +189,7 @@ export default function Furniture() {
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
           <img
-            src="/images/gadget11.jpg"
+            src="/images/gadget12.jpg"
             alt="Flash Forge Guider2s"
             style={{
               width: '100%',
