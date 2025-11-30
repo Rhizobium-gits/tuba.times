@@ -58,7 +58,7 @@ export default function Zatta() {
             fontSize: '14px'
           }}
         >
-          再現性の低い2025-11-30のデスク
+          再現性の低い2025-11-30のデスク.png
         </a>
       </section>
 
