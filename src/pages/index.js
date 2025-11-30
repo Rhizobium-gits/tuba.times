@@ -42,19 +42,16 @@ export default function Home() {
 
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>自己紹介</h2>
 　　　<p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-　　　 パソコン周りをいじるのと音楽が好きです．これは研究とは全く別です．ただ好きって言うだけです．中国にインターンに行ったのを機に3Dモデリングができるようになりました．
+       パソコン周りをいじるのと音楽が好きです．中国にインターンに行ったのを機に3Dモデリングができるようになりました．
       </p>
 　　　<p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-　　　 <a href="https://www.youtube.com/@RyuichiSakamotoArchive" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">坂本龍一</a>，<a href="https://www.youtube.com/channel/UCeMhZbWtGvULvXgEspzzfKA" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Goldmund</a>，<a href="https://www.youtube.com/@sakanactionchannel" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">サカナクション</a>，<a href="https://www.youtube.com/@ZUTOMAYO" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">ずっと真夜中でいいのに。</a>をよく聞きます．ジャズも聞きます．
+       <a href="https://www.youtube.com/@RyuichiSakamotoArchive" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">坂本龍一</a>，<a href="https://www.youtube.com/channel/UCeMhZbWtGvULvXgEspzzfKA" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Goldmund</a>，<a href="https://www.youtube.com/@sakanactionchannel" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">サカナクション</a>，<a href="https://www.youtube.com/@ZUTOMAYO" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">ずっと真夜中でいいのに。</a>をよく聞きます．ジャズも聞きます．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
        シンプルかつモダンなものが好きで，<a href="https://nothing.tech" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Nothing</a>にハマっています．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-       暇な時間は<a href="https://www.youtube.com/@tsuukin-times" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">通勤タイムズの企画</a>と<a href="https://www.youtube.com/playlist?list=PLDxonNcxMgrtONxErEWf2ZUlVJAoqDh9R" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Weekly Ochiai</a>をよく見ます．
-      </p>
-      <p style={{ lineHeight: '1.8' }}>
-       この2つをよく見ている大学生はかなり多いように感じます．
+       暇な時間は<a href="https://www.youtube.com/@tsuukin-times" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">通勤タイムズの企画</a>と<a href="https://www.youtube.com/playlist?list=PLDxonNcxMgrtONxErEWf2ZUlVJAoqDh9R" style={{ color: '#0000EE' }} target="_blank" rel="noopener noreferrer">Weekly Ochiai</a>をよく見ていることが多いです．
       </p>
       
       <h2 style={{ fontSize: '20px', marginTop: '30px' }}>研究</h2>
@@ -62,7 +59,7 @@ export default function Home() {
         2019年より，宇宙移住を背景とした縮小型閉鎖生態系維持システムの構築や，模擬地球外土壌を用いた生存可能性実験を行った．地球のバイオームを再現する実験を引き続き行っている．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
-        2025年より，慶應義塾大学 先端生命科学研究所 腸内細菌グループに所属し、低重力および過重力環境下におけるヒト腸内細菌叢の時間列動態解析を行っています．
+        2025年より，慶應義塾大学 先端生命科学研究所 腸内細菌グループに所属し，低重力および過重力環境下におけるヒト腸内細菌叢の時間列動態解析を行っています．
       </p>
       <p style={{ lineHeight: '1.8', marginBottom: '15px' }}>
         また，東京科学大学（旧東京医科歯科大学）難治疾患研究所の技術支援員として，細菌叢の時系列動的解析，深層学習モデルの応用，細菌培養装置の開発に携わっています．
