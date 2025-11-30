@@ -52,7 +52,7 @@ export default function Furniture() {
       textAlign: 'left',
       marginTop: '15px'   
     }}>
-      友人の韓国土産のお香のためにBlenderで作成．
+      友人の韓国土産のお香のためにBlenderで作成．素材はPLA．土台は100均で買ったガラス製の灰皿．サイズは底面の直径が35-40mmくらいにすれば良い(詳しいサイズは後日記載予定)．工夫した点は短くなっても空気が入れ替わって最後まで楽しめるように換気口を設けた点．
     </p>
     <a
       href="/stl/sennkoutate.stl"
