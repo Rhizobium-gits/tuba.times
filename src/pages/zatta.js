@@ -43,6 +43,21 @@ export default function Zatta() {
         >
           再現性の高い弁当 2025-12-01.pdf
         </a>
+<a
+          href="/ images/desk1.jpg"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block',
+            padding: '10px 16px',
+            border: '1px solid #000',
+            color: '#000',
+            textDecoration: 'none',
+            fontSize: '14px'
+          }}
+        >
+          再現性の低い2025-11-30のデスク
+        </a>
       </section>
 
       {/* メモ入力 */}
