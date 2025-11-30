@@ -19,7 +19,98 @@ export default function Furniture() {
       <nav style={{ marginTop: '20px', marginBottom: '30px' }}>
         <a href="/" style={{ color: '#0000EE', marginRight: '20px' }}>← ホームに戻る</a>
       </nav>
+
+<article style={{ marginTop: '40px', marginBottom: '60px' }}>
+  <div style={{ textAlign: 'center' }}>
+    <img
+      src="/images/gadget10.jpg"
+      alt="自作線香立て1"
+      style={{
+        width: '100%',
+        maxWidth: '400px',
+        height: 'auto',
+        border: '1px solid #ccc'
+      }}
+    />
+    <p style={{
+      marginTop: '15px',
+      fontSize: '18px',   
+      fontWeight: 'bold'
+    }}>
+      自作線香立て1
+    </p>
+    <p style={{
+      fontSize: '14px',
+      color: '#666',   
+      marginTop: '10px',
+      marginBottom: '15px'
+    }}>
+      投稿日:2025年11月30日
+    </p>
+    <p style={{
+      lineHeight: '1.8',
+      textAlign: 'left',
+      marginTop: '15px'   
+    }}>
+      友人の韓国土産のお香のためにBlenderで作成．土台は百均で買った灰皿．素材はPLAで土台にガムテープで固定．線香が短くなっても，筒の中で不完全燃焼しないように穴が空いているのが唯一の工夫点．Flash Forge Guider2sで印刷．サイズは底面が直径3.7-4.0くらいにすれば良い(あとで詳しいサイズを確認します)．
+    </p>
+    
+      href="/stl/sennkoutate.stl"
+      download="sennkoutate.stl"
+      style={{
+        display: 'inline-block',
+        marginTop: '20px',
+        padding: '10px 20px',
+        backgroundColor: '#333',
+        color: '#fff',
+        textDecoration: 'none',
+        borderRadius: '5px',
+        fontSize: '14px',
+        fontWeight: 'bold'
+      }}
+    >
+      .stlデータを取得
+    </a>
+  </div>
+</article>
    
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget12.jpg"
+            alt="東亜のリボンマッチ"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',   
+            fontWeight: 'bold'
+          }}>
+            東亜のリボンマッチ
+          </p>
+          <p style={{  
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月30日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',  
+            marginTop: '15px' 
+          }}>
+            友人の韓国土産のお香を買うために購入．その友人が退寮するらしい．寂しい．
+          </p>
+        </div>
+      </article>
+
       <article style={{ marginTop: '40px', marginBottom: '60px' }}>
         <div style={{ textAlign: 'center' }}>
           <img
@@ -91,6 +182,43 @@ export default function Furniture() {
             marginTop: '15px'
           }}>
             Nothingのサブブランドcmfの製品．Nothingらしいシンプルで洗練されたモダンなデザインに惹かれて購入．Amazonブラックフライデーにて38％オフで購入できた．朝が弱いので明日からはこの時計のアラームで起きれるようになりたい．
+          </p>
+        </div>
+      </article>
+
+      <article style={{ marginTop: '40px', marginBottom: '60px' }}>
+        <div style={{ textAlign: 'center' }}>
+          <img
+            src="/images/gadget11.jpg"
+            alt="Flash Forge Guider2s"
+            style={{
+              width: '100%',
+              maxWidth: '400px',
+              height: 'auto',
+              border: '1px solid #ccc'
+            }}   
+          />
+          <p style={{
+            marginTop: '15px',
+            fontSize: '18px',
+            fontWeight: 'bold'
+          }}>
+            Flash Forge Guider2s
+          </p>
+          <p style={{
+            fontSize: '14px',
+            color: '#666',
+            marginTop: '10px',
+            marginBottom: '15px'
+          }}>
+            投稿日:2025年11月22日
+          </p>
+          <p style={{
+            lineHeight: '1.8',
+            textAlign: 'left',
+            marginTop: '15px'
+          }}>
+            色々あって入手．運ぶのが少し大変だった．かなり大きめの3Dプリンター．想像したものを創造できる．部屋にあるとイカつくて格好がいい．
           </p>
         </div>
       </article>
