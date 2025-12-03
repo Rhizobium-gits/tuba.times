@@ -51,7 +51,7 @@ export default function Profile() {
         <li>ADvance Lab 副所長</li>
         <li>北京聚力維度科技有限公司 インターン（中国・北京）</li>
 　　　　<li>ADvance Lab 宇宙部門リーダー</li>
-　　　　<li>農研機構 西日本ん王業研究センター インターン</li>
+　　　　<li>農研機構 西日本農業研究センター インターン</li>
         <li>名古屋大学大学院医学系研究科 システム生物学研究室 派遣勤務 (PI: 島村徹平)</li>
       </ul>
       
