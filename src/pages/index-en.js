@@ -36,7 +36,7 @@ export default function Home() {
         <p style={{ lineHeight: '1.8' }}>
           1st Year Student, Faculty of Environment and Information Studies, Keio University<br />
           Intestinal Microbiota Group, Institute for Advanced Biosciences, Keio University (PI: Shinji Fukuda)<br />
-Department of Computational and Systems Biology, Medical Research Laboratory, Institute of Science Tokyo
+Department of Computational and Systems Biology, Medical Research Laboratory, Institute of Science Tokyo (PI:Teppei SHIMAMURA)
         </p>
       </div>
       
